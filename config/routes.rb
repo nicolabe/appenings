@@ -1,4 +1,7 @@
 Appenings::Application.routes.draw do
+  resources :appenings
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
