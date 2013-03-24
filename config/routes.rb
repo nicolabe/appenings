@@ -1,4 +1,7 @@
 Appenings::Application.routes.draw do
+  resources :users
+
+
   resources :appenings
 
 
