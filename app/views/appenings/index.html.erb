@@ -1,9 +1,7 @@
 <h1>Listing appenings for <%= current_user.username %></h1>
 
-<%= link_to "Log out", logout_path %>
+<%= link_to "Browse friends", friends_index_path %> | <%= link_to "Log out", logout_path %>
 <br/>
-Achieve this:
-<%= text_field_tag :achieve, "", autofocus: true %>  
 
 <h3>Unfinished appenings</h3>
 <% @appenings.each do |appening| %>

@@ -39,6 +39,7 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
   
+  field :friends, :type => Array, :default => []
   validates_presence_of :username, :email
   embeds_many :appenings
 end

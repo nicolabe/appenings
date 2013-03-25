@@ -1,4 +1,6 @@
 Appenings::Application.routes.draw do
+  get "friends/index"
+
   devise_for :users
 
   get "login/index"
