@@ -1,9 +1,6 @@
 Appenings::Application.routes.draw do
   get "login/index"
 
-  resources :users
-
-
   resources :appenings
 
   root :to => "login#index"
