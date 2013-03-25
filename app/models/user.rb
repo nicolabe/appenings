@@ -3,5 +3,5 @@ class User
   field :username, type: String
   validates_presence_of :username
 
-  references_many :appenings
+  has_many :appenings
 end

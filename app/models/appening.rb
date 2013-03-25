@@ -5,5 +5,5 @@ class Appening
   field :body, type: String
   validates_presence_of :title
 
-  referenced_in :author
+  has_one :user
 end
