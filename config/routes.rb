@@ -9,6 +9,7 @@ Appenings::Application.routes.draw do
 
   resources :appenings do
     post :accomplish, :on => :member
+    post :copy, :on => :member
   end
 
   root :to => "login#index"

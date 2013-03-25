@@ -89,4 +89,13 @@ class AppeningsController < ApplicationController
     @appening.save
     redirect_to appenings_path, notice: "Congratulations, you've accomplished a goal!"
   end
+
+  def copy
+    user = User.find(params[:user_id])
+    @appening = user.appenings.find(params[:id])
+    current_user.appenings << @appening
+    if current_user.save
+      redirect_to appenings_path, notice: "Good luck!"
+    end
+  end
 end
