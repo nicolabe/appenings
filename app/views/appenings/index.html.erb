@@ -1,18 +1,34 @@
 <h1>Listing appenings for <%= current_user.username %></h1>
 
 <%= link_to "Log out", logout_path %>
+<br/>
+Achieve this:
+<%= text_field_tag :achieve, "", autofocus: true %>  
 
+<h3>Unfinished appenings</h3>
 <% @appenings.each do |appening| %>
 
-<div class="appening">
-<b><%= appening.title %></b>
-<p><%= appening.body %></p>
-<%= button_to "Accomplished", "#" %>
-</div>
-<hr/>
+  <div class="appening">
+    <b><%= appening.title %></b>
+    <p><%= appening.body %></p>
+    <%= link_to "Edit", edit_appening_path(appening) %>
+    <%= button_to "Accomplished", accomplish_appening_path(appening) %>
+  </div>
+  <hr/>
 
 <% end %>
 
 <br />
 
-<%= link_to 'New Appening', new_appening_path %>
+<%= link_to 'Create a new appening', new_appening_path %>
+
+<h3>Accomplished appenings</h3>
+
+<% @accomplished_appenings.each do |appening| %>
+
+  <div class="appening">
+    <b><%= appening.title %></b>
+    <p><%= appening.body %></p>
+  </div>
+
+<% end %>

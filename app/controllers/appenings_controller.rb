@@ -2,7 +2,8 @@ class AppeningsController < ApplicationController
   # GET /appenings
   # GET /appenings.json
   def index
-    @appenings = current_user.appenings
+    @appenings = current_user.appenings.where(accomplished: false)
+    @accomplished_appenings = current_user.appenings.where(accomplished: true)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,5 +81,12 @@ class AppeningsController < ApplicationController
       format.html { redirect_to appenings_url }
       format.json { head :no_content }
     end
+  end
+
+  def accomplish
+    @appening = current_user.appenings.find(params[:id])
+    @appening.accomplished = true
+    @appening.save
+    redirect_to appenings_path, notice: "Congratulations, you've accomplished a goal!"
   end
 end

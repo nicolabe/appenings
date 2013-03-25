@@ -3,7 +3,9 @@ Appenings::Application.routes.draw do
 
   get "login/index"
 
-  resources :appenings
+  resources :appenings do
+    post :accomplish, :on => :member
+  end
 
   root :to => "login#index"
 
