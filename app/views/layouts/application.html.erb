@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Appenings</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", "jquery-ui-1.10.2.custom", :media => "all" %>
+  <%= javascript_include_tag "jquery-1.9.1.min.js", "jquery-ui-1.10.2.custom.min", "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <p id="notice"><%= notice %></p>
+
 <p id="alert"><%= alert %></p>
 
 <%= yield %>
