@@ -7,6 +7,7 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
+  field :username,               :type => String, :default => ""
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
   
@@ -37,6 +38,7 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
-
+  
+  validates_presence_of :username, :email
   embeds_many :appenings
 end

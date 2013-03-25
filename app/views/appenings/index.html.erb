@@ -1,4 +1,6 @@
-<h1>Listing appenings</h1>
+<h1>Listing appenings for <%= current_user.username %></h1>
+
+<%= link_to "Log out", logout_path %>
 
 <% @appenings.each do |appening| %>
 
