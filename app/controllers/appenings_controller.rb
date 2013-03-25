@@ -46,7 +46,7 @@ class AppeningsController < ApplicationController
 
     respond_to do |format|
       if @appening.save
-        format.html { redirect_to appenings_path, notice: 'Appening was successfully created.' }
+        format.html { redirect_to "/appenings/", notice: 'Appening was successfully created.' }
         format.json { render json: @appening, status: :created, location: @appening }
       else
         format.html { render action: "new" }
