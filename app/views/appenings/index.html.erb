@@ -1,24 +1,16 @@
 <h1>Listing appenings</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @appenings.each do |appening| %>
-  <tr>
-    <td><%= appening.title %></td>
-    <td><%= appening.body %></td>
-    <td><%= link_to 'Show', appening %></td>
-    <td><%= link_to 'Edit', edit_appening_path(appening) %></td>
-    <td><%= link_to 'Destroy', appening, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+<div class="appening">
+<b><%= appening.title %></b>
+<p><%= appening.body %></p>
+<%= link_to 'Edit', edit_appening_path(appening) %>
+<%= link_to 'Destroy', appening, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<hr/>
+
 <% end %>
-</table>
 
 <br />
 

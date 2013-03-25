@@ -3,7 +3,7 @@ class Appening
   include Mongoid::Timestamps
   field :title, type: String
   field :body, type: String
-  validates_presence_of :title
+  validates_presence_of :title, :user
 
-  has_one :user
+  embedded_in :user
 end

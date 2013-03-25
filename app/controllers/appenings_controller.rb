@@ -2,7 +2,7 @@ class AppeningsController < ApplicationController
   # GET /appenings
   # GET /appenings.json
   def index
-    @appenings = Appening.all
+    @appenings = current_user.appenings
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class AppeningsController < ApplicationController
   # GET /appenings/1
   # GET /appenings/1.json
   def show
-    @appening = Appening.find(params[:id])
+    @appening = current_user.appenings.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,17 +34,18 @@ class AppeningsController < ApplicationController
 
   # GET /appenings/1/edit
   def edit
-    @appening = Appening.find(params[:id])
+    @appening = current_user.appenings.find(params[:id])
   end
 
   # POST /appenings
   # POST /appenings.json
   def create
     @appening = Appening.new(params[:appening])
+    @appening.user = current_user
 
     respond_to do |format|
       if @appening.save
-        format.html { redirect_to @appening, notice: 'Appening was successfully created.' }
+        format.html { redirect_to appenings_path, notice: 'Appening was successfully created.' }
         format.json { render json: @appening, status: :created, location: @appening }
       else
         format.html { render action: "new" }
@@ -56,11 +57,11 @@ class AppeningsController < ApplicationController
   # PUT /appenings/1
   # PUT /appenings/1.json
   def update
-    @appening = Appening.find(params[:id])
+    @appening = current_user.appenings.find(params[:id])
 
     respond_to do |format|
       if @appening.update_attributes(params[:appening])
-        format.html { redirect_to @appening, notice: 'Appening was successfully updated.' }
+        format.html { redirect_to appenings_path, notice: 'Appening was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -72,7 +73,7 @@ class AppeningsController < ApplicationController
   # DELETE /appenings/1
   # DELETE /appenings/1.json
   def destroy
-    @appening = Appening.find(params[:id])
+    @appening = current_user.appenings.find(params[:id])
     @appening.destroy
 
     respond_to do |format|
