@@ -14,6 +14,7 @@ Appenings::Application.routes.draw do
   devise_scope :user do
     get "/logout" => "devise/sessions#destroy"
   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
