@@ -1,0 +1,10 @@
+<h1>Add friend</h1>
+
+<% @users.each do |user| %>
+  <div class="friends">
+    <%= user.username %>
+    <%= link_to("Add friend", add_friend_path(user)) unless current_user.friends.include?(user.id) %>
+  </div>
+<% end %>
+<br/>
+<%= link_to "Back", friends_path %>

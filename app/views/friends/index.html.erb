@@ -1,6 +1,8 @@
 <h1>Browse friends</h1>
 <% @friends.each do |friend| %>
-  <%= friend.username %>
+  <div class="friends">
+    <%= friend.username %>
+  </div>
 <% end %>
 
-<%= link_to "Add new friend", "#" %>
+<%= link_to "Add new friend", new_friend_path %> | <%= link_to "Back", appenings_path %>

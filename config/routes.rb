@@ -1,9 +1,11 @@
 Appenings::Application.routes.draw do
-  get "friends/index"
-
   devise_for :users
 
   get "login/index"
+
+  resources :friends do
+    get :add, :on => :member
+  end
 
   resources :appenings do
     post :accomplish, :on => :member
