@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-	// $(function() {
-	// 	$( ".alert" ).dialog();
-	// });
+	$("#orderedlist").find("li").each(function(i) {
+		$(this).append(" BAM! " + i);
+	});
 });

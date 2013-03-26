@@ -1,41 +1,41 @@
-<%= link_to "Browse friends", friends_path %>
+<div class="grid_12 appeningList">
+  <h3 class="appeningHeader">Unfinished appenings</h3>
 
-<h3>Unfinished appenings</h3>
-
-<% @appenings.each do |appening| %>
+  <% @appenings.each do |appening| %>
 
   <div class="appening">
-    <b><%= appening.title %></b>
+    <h3><%= appening.title %></h3>
     <p><%= appening.body %></p>
     Started: <p><%= appening.created_at.strftime("%D") %></p>
     <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
     <%= link_to "Edit", edit_appening_path(appening) %>
     <%= button_to "Accomplished", accomplish_appening_path(appening) %>
     <% appening.comments_list.each do |comment| %> 
-      <div class="comments">
-        <%= comment.author %> wrote: <br/>
-        <%= comment.text %><br/>
-      </div>
+    <div class="comments">
+      <%= comment.author %> wrote: <br/>
+      <%= comment.text %><br/>
+    </div>
     <% end %>
   </div>
 
-<% end %>
-
+  <% end %>
+</div>
 <br />
 
-<h3>Accomplished appenings</h3>
+<div class="grid_12 appeningList">
+  <h3>Accomplished appenings</h3>
 
-<% @accomplished_appenings.each do |appening| %>
+  <% @accomplished_appenings.each do |appening| %>
 
   <div class="appening">
     <b><%= appening.title %></b>
     <p><%= appening.body %></p>
     <% appening.comments_list.each do |comment| %> 
-      <div class="comments">
-        <%= comment.author %> wrote: <br/>
-        <%= comment.text %><br/>
-      </div>
+    <div class="comments">
+      <%= comment.author %> wrote: <br/>
+      <%= comment.text %><br/>
+    </div>
     <% end %>
   </div>
-
+</div>
 <% end %>

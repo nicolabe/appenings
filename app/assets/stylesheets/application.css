@@ -10,6 +10,7 @@
  *
  *= jquery-ui-1.10.2.custom.css
  *= require reset
+ *= require font-awesome
  *= require 960.css
  *= require text.css
  *= require_self

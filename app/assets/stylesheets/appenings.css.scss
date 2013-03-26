@@ -1,6 +1,7 @@
 // Place all the styles related to the Appenings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 $background: #E0D1A3;
 $font: #5E7D4D;
 $accent: #C74223;
@@ -15,10 +16,16 @@ $accent2: #232621;
 	src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
 }
 
-.appening {
-  background-color: #f1f1f1;  
-  border: 1px solid black;
-  padding: 10px;
+.friendButton{
+	color:white;
+	text-decoration: none;
+}
+
+.menu{
+	padding-right: 0.4em;
+	display: inline-block;
+	float:right;
+	color:white;
 }
 
 body{
@@ -65,15 +72,8 @@ topbar elements
 }
 
 .logoutButton{
-	float:right;
 	text-decoration: none;
-	font-size: 0.6em;
-	border: 1px solid $background;
-	background-image: linear-gradient(bottom, #7D5F3E 40%, #C99B63 100%);
-	background-image: -o-linear-gradient(bottom, #7D5F3E 40%, #C99B63 100%);
-	background-image: -moz-linear-gradient(bottom, #7D5F3E 40%, #C99B63 100%);
-	background-image: -webkit-linear-gradient(bottom, #7D5F3E 40%, #C99B63 100%);
-	background-image: -ms-linear-gradient(bottom, #7D5F3E 40%, #C99B63 100%);
+	color:red;
 }
 
 a.button:link, a.button:visited, a.button:active{
