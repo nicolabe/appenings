@@ -1,6 +1,8 @@
 <h1>Listing appenings for <%= current_user.username %></h1>
 
-<%= link_to "Browse friends", friends_path %> | <%= link_to "Log out", logout_path %>
+<%= link_to 'Create a new appening', new_appening_path %> |
+<%= link_to "Browse friends", friends_path %> | 
+<%= link_to "Log out", logout_path %>
 <br/>
 
 <h3>Unfinished appenings</h3>
@@ -25,8 +27,6 @@
 <% end %>
 
 <br />
-
-<%= link_to 'Create a new appening', new_appening_path %>
 
 <h3>Accomplished appenings</h3>
 
