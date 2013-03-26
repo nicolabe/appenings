@@ -98,4 +98,13 @@ class AppeningsController < ApplicationController
     current_user.appenings << copy_appening
     redirect_to appenings_path, notice: "Good luck!"
   end
+
+  def cancel
+    @appening = Appening.find(params[:appening_id]) rescue nil
+    @original_action = params[:original_action]
+
+    respond_to do |format|
+      format.js
+    end
+  end
 end
