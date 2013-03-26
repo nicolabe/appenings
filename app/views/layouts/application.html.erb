@@ -9,17 +9,18 @@
 <body>
 	<div class="topBarContainer">
 		<div class="topBar">
-			<span class="logo">Appenings</span>
-
-			<%if current_user.present? %>
-			<div class="menu">
-				<span class="username">
-					<%= current_user.username %>
-				</span>
-        <%= link_to "<i class='icon-plus'></i>".html_safe, new_appening_path, :class => "" %>
-				<%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
-				<%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
-			</div>
+      <% if current_user %>
+        <%= link_to('<span class="logo">Appenings</span>'.html_safe, appenings_path) if current_user %> 
+        <div class="menu">
+          <span class="username">
+            <%= current_user.username %>
+          </span>
+          <%= link_to "<i class='icon-plus'></i>".html_safe, new_appening_path, :class => "" %>
+          <%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
+          <%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
+        </div>
+      <% else %>
+        <span class="logo">Appenings</span>
 			<% end %>
 
 		</div>
