@@ -16,18 +16,19 @@
     <%= button_to "Accomplished", accomplish_appening_path(appening) %>
     <% appening.comments_list.each do |comment| %> 
     <div class="comments">
-      <%= comment.author %> wrote: <br/>
-      <%= comment.text %><br/>
+      <%= comment.author %> wrote: 
+      <%= comment.text %>
     </div>
     <% end %>
   </div>
 
   <% end %>
 </div>
-<br />
 
 <div class="grid_12 appeningList">
-  <h3>Accomplished appenings</h3>
+  <div class="appeningHeader">
+    <h3>Accomplished appenings</h3>
+  </div>
 
   <% @accomplished_appenings.each do |appening| %>
 
@@ -35,8 +36,8 @@
     <b><%= appening.title %></b>
     <% appening.comments_list.each do |comment| %> 
     <div class="comments">
-      <%= comment.author %> wrote: <br/>
-      <%= comment.text %><br/>
+      <%= comment.author %> wrote: 
+      <%= comment.text %>
     </div>
     <% end %>
   </div>

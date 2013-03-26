@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $background: #E0D1A3;
+$backgroundShade: #C7B991;
 $font: #5E7D4D;
 $accent: #C74223;
 $accent2: #232621;
@@ -63,13 +64,6 @@ topbar elements
 	padding-top: 3em !important;
 }
 
-.newAppening{
-	text-decoration: none;
-	color: #5E7D4D;
-	float:right;
-	font-size: 1.5em;
-}
-
 .logo{
 	font-family: Franchise, helvetica;
 	color:$font;
@@ -108,11 +102,20 @@ a.button:link, a.button:visited, a.button:active{
 
 .appeningHeader{
 	background-color: $brown;
+	color: $accent2;
 	height: 2.3em;
+	padding: 1em;
 }
 
 .appeningHeader > h3{
 	float:left;
+}
+
+.newAppening{
+	text-decoration: none;
+	color: #5E7D4D;
+	float:right;
+	font-size: 1.5em;
 }
 
 /* end appening listing */
