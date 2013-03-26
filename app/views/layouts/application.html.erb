@@ -15,7 +15,7 @@
           <span class="username">
             <%= current_user.username %>
           </span>
-          <%= link_to "<i class='icon-plus'></i>".html_safe, new_appening_path, :class => "" %>
+          <%= link_to "<i class='icon-plus'></i>".html_safe, new_appening_path, :class => "", remote: true %>
           <%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
           <%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
         </div>

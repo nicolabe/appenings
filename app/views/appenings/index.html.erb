@@ -1,13 +1,15 @@
 <div class="grid_12 appeningList">
   <h3 class="appeningHeader">Unfinished appenings</h3>
 
+  <div id="newAppening"></div>
+
   <% @appenings.each do |appening| %>
 
   <div class="appening">
-    <h4><%= appening.title %></h4>
+    <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
     Started: <p><%= appening.created_at.strftime("%D") %></p>
     <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
-    <%= link_to "Edit", edit_appening_path(appening) %>
+    <%= link_to "Edit", edit_appening_path(appening), remote: true %>
     <%= button_to "Accomplished", accomplish_appening_path(appening) %>
     <% appening.comments_list.each do |comment| %> 
     <div class="comments">
