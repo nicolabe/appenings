@@ -10,7 +10,11 @@
 	<div class="topBarContainer">
 		<div class="topBar">
 			<span class="logo">Appenings</span>
-			<span class="username"><%= current_user.username %></span>
+			<%if current_user.present? %>
+			<span class="username">
+				<%= current_user.username %>
+			</span>
+			<% end %>
 			<%= link_to "Log out", logout_path, :class => "logoutButton" %>
 		</div>
 	</div>

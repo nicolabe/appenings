@@ -1,7 +1,15 @@
-<%= link_to "Browse friends", friends_path %>
+<<<<<<< HEAD
+<%= link_to "Browse friends", friends_path %> | <%= link_to "Log out", logout_path %>
+=======
+<h1>Listing appenings for <%= current_user.username %></h1>
+
+<%= link_to 'Create a new appening', new_appening_path %> |
+<%= link_to "Browse friends", friends_path %> | 
+<%= link_to "Log out", logout_path %>
+<br/>
+>>>>>>> 62065e7c580de7a8a09dff1389ce8d613670b6dc
 
 <h3>Unfinished appenings</h3>
-
 <% @appenings.each do |appening| %>
 
   <div class="appening">
