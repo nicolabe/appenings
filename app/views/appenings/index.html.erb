@@ -6,15 +6,21 @@
   <div class="appening">
     <b><%= appening.title %></b>
     <p><%= appening.body %></p>
+    Started: <p><%= appening.created_at.strftime("%D") %></p>
+    <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
     <%= link_to "Edit", edit_appening_path(appening) %>
     <%= button_to "Accomplished", accomplish_appening_path(appening) %>
+    <% appening.comments_list.each do |comment| %> 
+      <div class="comments">
+        <%= comment.author %> wrote: <br/>
+        <%= comment.text %><br/>
+      </div>
+    <% end %>
   </div>
 
 <% end %>
 
 <br />
-
-<%= link_to 'Create a new appening', new_appening_path %>
 
 <h3>Accomplished appenings</h3>
 
@@ -23,6 +29,12 @@
   <div class="appening">
     <b><%= appening.title %></b>
     <p><%= appening.body %></p>
+    <% appening.comments_list.each do |comment| %> 
+      <div class="comments">
+        <%= comment.author %> wrote: <br/>
+        <%= comment.text %><br/>
+      </div>
+    <% end %>
   </div>
 
 <% end %>

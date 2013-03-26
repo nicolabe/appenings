@@ -41,5 +41,5 @@ class User
   
   field :friends, :type => Array, :default => []
   validates_presence_of :username, :email
-  embeds_many :appenings
+  has_many :appenings
 end
