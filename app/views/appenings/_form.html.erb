@@ -2,5 +2,6 @@
   <div class="grid_8 push_2 newAppening">
   	<h3> Add a new appening </h3>
     <%= f.text_field :title, id: "#{params[:action]}_appening_field", placeholder: "What do you want to accomplish?" %>
+    <%= link_to "Cancel", cancel_appenings_path(appening_id: @appening, original_action: params[:action]), remote: true %>
   </div>
 <% end %>

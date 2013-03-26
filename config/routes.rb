@@ -8,6 +8,7 @@ Appenings::Application.routes.draw do
   end
 
   resources :appenings do
+    get :cancel, :on => :collection
     post :accomplish, :on => :member
     post :copy, :on => :member
     resources :comments
