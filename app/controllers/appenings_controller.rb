@@ -29,7 +29,7 @@ class AppeningsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @appening }
+      format.js
     end
   end
 
@@ -93,6 +93,7 @@ class AppeningsController < ApplicationController
   def copy
     @appening = Appening.find(params[:id])
     copy_appening = @appening.dup
+    copy_appening.comments_list.delete_all
     copy_appening.accomplished = false
     current_user.appenings << copy_appening
     redirect_to appenings_path, notice: "Good luck!"

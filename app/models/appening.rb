@@ -3,7 +3,6 @@ class Appening
   include Mongoid::Timestamps
   include Mongoid::Commentable
   field :title, type: String
-  field :body, type: String
   field :accomplished, type: Boolean, default: false
   validates_presence_of :title, :user
 

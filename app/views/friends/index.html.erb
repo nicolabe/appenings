@@ -5,8 +5,13 @@
     <div class="appening">
       <% friend.appenings.each do |appening| %>
         <b><%= appening.title %></b><br/>
-        <%= appening.body %><br/>
         Status: <%= appening.accomplished ? "Accomplished" : "In progress" %>
+        <% appening.comments_list.each do |comment| %> 
+          <div class="comments">
+            <%= comment.author %> wrote: <br/>
+            <%= comment.text %><br/>
+          </div>
+        <% end %>
         <%= button_to "Comment", new_appening_comment_path(appening_id: appening.id), method: "get" %> 
         <%= button_to "Copy", copy_appening_path(appening, user_id: friend.id) %>
         <br/>
