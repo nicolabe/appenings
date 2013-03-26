@@ -66,6 +66,8 @@ topbar elements
 .newAppening{
 	text-decoration: none;
 	color: #5E7D4D;
+	float:right;
+	font-size: 1.5em;
 }
 
 .logo{
@@ -106,10 +108,11 @@ a.button:link, a.button:visited, a.button:active{
 
 .appeningHeader{
 	background-color: $brown;
+	height: 2.3em;
 }
 
-.appening > h3{
-	color:red;
+.appeningHeader > h3{
+	float:left;
 }
 
 /* end appening listing */

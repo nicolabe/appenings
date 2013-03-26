@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Appenings</title>
+	<%= stylesheet_link_tag    "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="topBarContainer">
+		<div class="topBar">
+<<<<<<< HEAD
+      <% if current_user %>
+        <%= link_to('<span class="logo">Appenings</span>'.html_safe, appenings_path) if current_user %> 
+         <span class="username">
+            <%= current_user.username %>
+          </span>
+        <div class="menu">
+          <%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
+          <%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
+        </div>
+      <% else %>
+        <span class="logo">Appenings</span>
+=======
+			<span class="logo">Appenings</span>
+
+			<% if current_user.present? %>
+        <div class="menu">
+          <span class="username">
+            <%= link_to current_user.username, appenings_path, :class => "username" %>
+          </span>
+          <%= link_to "<i class='icon-plus'></i>".html_safe, new_appening_path, :class => "newAppening", remote: true %>
+          <%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
+          <%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
+        </div>
+>>>>>>> 799bed048ef490cbb0140cda4739c987d057d42e
+			<% end %>
+
+		</div>
+	</div>
+
+	<div id="container" class="container_12">
+		<% if notice.present? %>
+		<div class="notice"><p><%= notice %></p></div>
+		<% end %>
+
+		<% if alert.present? %>
+		<div class="alert"><p><%= alert %></p></div>
+		<% end %>
+
+
+		<%= yield %>
+	</div>
+</body>
+</html>
