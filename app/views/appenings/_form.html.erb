@@ -1,6 +1,6 @@
 <%= form_for(@appening) do |f| %>
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title, id: "new_appening_field" %>
+    <%= f.text_field :title, id: "#{params[:action]}_appening_field" %>
   </div>
 <% end %>
