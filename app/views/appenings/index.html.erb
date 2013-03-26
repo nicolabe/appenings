@@ -1,7 +1,4 @@
-<h1>Listing appenings for <%= current_user.username %></h1>
-
 <%= link_to "Browse friends", friends_path %> | <%= link_to "Log out", logout_path %>
-<br/>
 
 <h3>Unfinished appenings</h3>
 <% @appenings.each do |appening| %>
@@ -12,7 +9,6 @@
     <%= link_to "Edit", edit_appening_path(appening) %>
     <%= button_to "Accomplished", accomplish_appening_path(appening) %>
   </div>
-  <hr/>
 
 <% end %>
 
