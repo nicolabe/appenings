@@ -7,21 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%=
-if notice.present?
-	print '<div class="notice"><p>' + notice + '</p></div'
-end
-%>
-
-<%=
-if alert.present?
-	print '<div class="alert"><p>' + alert + '</p></div>'
-end
-%>
+<div id="container" class="container_12">
+<% if notice.present? %>
+  <div class="notice"><p><%= notice %></p></div>
+<% end %>
+ 
+<% if alert.present? %>
+  <div class="alert"><p><%= alert %></p></div>
+<% end %>
 
 
 <%= yield %>
-
+</div>
 </body>
 </html>
