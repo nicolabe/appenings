@@ -1,5 +1,8 @@
 $(document).ready(function() {
-	$("#orderedlist").find("li").each(function(i) {
+
+	//le toggle for appening list if i can ever get it to work
+	$(".appeningList").find("li").each(function(i) {
 		$(this).append(" BAM! " + i);
 	});
+
 });
