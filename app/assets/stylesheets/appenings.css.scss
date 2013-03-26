@@ -30,8 +30,10 @@ $brown: #7D603E;
 	color:white;
 }
 
-.menu{
+.menu a{
+	font-size: .9em;
 	text-decoration: none;
+	margin-right: .4em;
 }
 
 body{
@@ -117,6 +119,24 @@ a.button:link, a.button:visited, a.button:active{
 	float:right;
 	font-size: 1.5em;
 }
+/* each appening */
+
+.appeningEntries{
+	
+}
+
+.appeningEntries:nth-child(2){
+	background-color: $backgroundShade;
+}
+
+.appening h4{
+	float:left;
+}
+
+.appening p{
+	float: right;
+}
+
 
 /* end appening listing */
 

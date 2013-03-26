@@ -12,13 +12,13 @@
 			<span class="logo">Appenings</span>
 
 			<% if current_user.present? %>
-        <div class="menu">
-          <span class="username">
-            <%= link_to current_user.username, appenings_path, :class => "username" %>
-          </span>
-          <%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
-          <%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
-        </div>
+			<span class="username">
+				<%= link_to current_user.username, appenings_path, :class => "username" %>
+			</span>
+			<div class="menu">
+				<%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
+				<%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :class => "logoutButton" %>
+			</div>
 			<% end %>
 
 		</div>

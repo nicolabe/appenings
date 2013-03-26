@@ -5,24 +5,29 @@
   </div>
 
   <div id="newAppening"></div>
+  
+  <div class="appeningEntries">
+    
+    <% @appenings.each do |appening| %>
+    <div class="appening">
+      <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
 
-  <% @appenings.each do |appening| %>
+      <p>Started: <%= appening.created_at.strftime("%D") %></p>
 
-  <div class="appening">
-    <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
-    Started: <p><%= appening.created_at.strftime("%D") %></p>
-    <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
-    <%= link_to "Edit", edit_appening_path(appening), remote: true %>
-    <%= button_to "Accomplished", accomplish_appening_path(appening) %>
-    <% appening.comments_list.each do |comment| %> 
-    <div class="comments">
-      <%= comment.author %> wrote: 
-      <%= comment.text %>
+      <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
+      <%= link_to "Edit", edit_appening_path(appening), remote: true %>
+      <%= button_to "Accomplished", accomplish_appening_path(appening) %>
+
+      <% appening.comments_list.each do |comment| %> 
+      <div class="comments">
+        <%= comment.author %> wrote: 
+        <%= comment.text %>
+      </div>
+      <% end %>
     </div>
+
     <% end %>
   </div>
-
-  <% end %>
 </div>
 
 <div class="grid_12 appeningList">
