@@ -93,7 +93,9 @@ class AppeningsController < ApplicationController
   def copy
     user = User.find(params[:user_id])
     @appening = user.appenings.find(params[:id])
-    current_user.appenings << @appening
+    copy_appening = @appening.dup
+    copy_appening.accomplished = false
+    current_user.appenings << copy_appening
     if current_user.save
       redirect_to appenings_path, notice: "Good luck!"
     end
