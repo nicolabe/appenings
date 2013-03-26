@@ -14,7 +14,7 @@ class AppeningsController < ApplicationController
   # GET /appenings/1
   # GET /appenings/1.json
   def show
-    @appening = current_user.appenings.find(params[:id])
+    @appening = Appening.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -58,7 +58,7 @@ class AppeningsController < ApplicationController
   # PUT /appenings/1
   # PUT /appenings/1.json
   def update
-    @appening = current_user.appenings.find(params[:id])
+    @appening = Appening.find(params[:id])
 
     respond_to do |format|
       if @appening.update_attributes(params[:appening])
@@ -74,7 +74,7 @@ class AppeningsController < ApplicationController
   # DELETE /appenings/1
   # DELETE /appenings/1.json
   def destroy
-    @appening = current_user.appenings.find(params[:id])
+    @appening = Appening.find(params[:id])
     @appening.destroy
 
     respond_to do |format|
@@ -84,20 +84,17 @@ class AppeningsController < ApplicationController
   end
 
   def accomplish
-    @appening = current_user.appenings.find(params[:id])
+    @appening = Appening.find(params[:id])
     @appening.accomplished = true
     @appening.save
     redirect_to appenings_path, notice: "Congratulations, you've accomplished a goal!"
   end
 
   def copy
-    user = User.find(params[:user_id])
-    @appening = user.appenings.find(params[:id])
+    @appening = Appening.find(params[:id])
     copy_appening = @appening.dup
     copy_appening.accomplished = false
     current_user.appenings << copy_appening
-    if current_user.save
-      redirect_to appenings_path, notice: "Good luck!"
-    end
+    redirect_to appenings_path, notice: "Good luck!"
   end
 end

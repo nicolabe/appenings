@@ -4,9 +4,10 @@
     <b><%= friend.username %></b>
     <div class="appening">
       <% friend.appenings.each do |appening| %>
-        <%= appening.title %>
-        <%= appening.body %>
-        <%= appening.accomplished ? "Accomplished" : "In progress" %>
+        <b><%= appening.title %></b><br/>
+        <%= appening.body %><br/>
+        Status: <%= appening.accomplished ? "Accomplished" : "In progress" %>
+        <%= button_to "Comment", new_appening_comment_path(appening_id: appening.id), method: "get" %> 
         <%= button_to "Copy", copy_appening_path(appening, user_id: friend.id) %>
         <br/>
       <% end %>
