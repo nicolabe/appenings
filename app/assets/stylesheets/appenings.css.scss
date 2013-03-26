@@ -6,6 +6,7 @@ $background: #E0D1A3;
 $font: #5E7D4D;
 $accent: #C74223;
 $accent2: #232621;
+$brown: #7D603E;
 
 @font-face {
 	font: {
@@ -28,6 +29,10 @@ $accent2: #232621;
 	color:white;
 }
 
+.menu{
+	text-decoration: none;
+}
+
 body{
 	background-color: $background;
 	color:black;
@@ -43,6 +48,7 @@ topbar elements
 	margin-bottom: 4em;
 }
 
+
 .topBar{
 	position: fixed;
 	top:0;
@@ -57,18 +63,24 @@ topbar elements
 	padding-top: 3em !important;
 }
 
+.newAppening{
+	text-decoration: none;
+	color: #5E7D4D;
+}
+
 .logo{
 	font-family: Franchise, helvetica;
 	color:$font;
 }
 
-.username{
+.username, .username:visited{
 	font-family: Franchise, helvetica;
 	position: absolute;
 	color: $accent;
 	left:45%;
-	font-size: 1.5em;
+	font-size: 1.3em;
 	top: -0.1em;
+	text-decoration: none;
 }
 
 .logoutButton{
@@ -82,6 +94,25 @@ a.button:link, a.button:visited, a.button:active{
 	text-decoration: none;
 	color: black;
 }
+
+/* appening listing */
+
+.appeningList{
+	-webkit-box-shadow: 0px 2px 5px #000;
+	-moz-box-shadow:    0px 2px 5px #000;
+	box-shadow:         0px 2px 5px #000;
+	margin-bottom: 4em;
+}
+
+.appeningHeader{
+	background-color: $brown;
+}
+
+.appening > h3{
+	color:red;
+}
+
+/* end appening listing */
 
 h1{
 	font-family: Franchise;
