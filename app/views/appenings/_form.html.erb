@@ -1,6 +1,6 @@
 <%= form_for(@appening) do |f| %>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, id: "#{params[:action]}_appening_field" %>
+  <div class="grid_8 push_2 newAppening">
+  	<h3> Add a new appening </h3>
+    <%= f.text_field :title, id: "#{params[:action]}_appening_field", placeholder: "What do you want to accomplish?" %>
   </div>
 <% end %>

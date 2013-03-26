@@ -1,23 +1,20 @@
+<div id="newAppening"></div>
+
 <div class="grid_12 appeningList">
   <div class="appeningHeader">
     <h3>Unfinished appenings</h3>
-    <%= link_to "new <i class='icon-plus'></i>".html_safe, new_appening_path, :class => "newAppening", remote: true %>
+    <%= link_to "new <i class='icon-plus'></i>".html_safe, new_appening_path, :class => "newAppeningButton", remote: true %>
   </div>
-
-  <div id="newAppening"></div>
   
   <div class="appeningEntries">
-    
+
     <% @appenings.each do |appening| %>
     <div class="appening">
       <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
-
       <p>Started: <%= appening.created_at.strftime("%D") %></p>
-
       <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
       <%= link_to "Edit", edit_appening_path(appening), remote: true %>
       <%= button_to "Accomplished", accomplish_appening_path(appening) %>
-
       <% appening.comments_list.each do |comment| %> 
       <div class="comments">
         <%= comment.author %> wrote: 
@@ -25,7 +22,7 @@
       </div>
       <% end %>
     </div>
-
+    
     <% end %>
   </div>
 </div>
@@ -35,6 +32,7 @@
     <h3>Accomplished appenings</h3>
   </div>
 
+<div class="appeningEntries">
   <% @accomplished_appenings.each do |appening| %>
 
   <div class="appening">
@@ -48,3 +46,4 @@
   </div>
 </div>
 <% end %>
+</div>
