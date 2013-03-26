@@ -10,6 +10,7 @@ Appenings::Application.routes.draw do
   resources :appenings do
     post :accomplish, :on => :member
     post :copy, :on => :member
+    resources :comments
   end
 
   root :to => "login#index"
