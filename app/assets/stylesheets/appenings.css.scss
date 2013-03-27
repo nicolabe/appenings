@@ -69,6 +69,7 @@ topbar elements
 .logo{
 	font-family: Franchise, helvetica;
 	color:$font;
+	margin-left: .4em;
 }
 
 .username, .username:visited{
@@ -111,6 +112,7 @@ a.button:link, a.button:visited, a.button:active{
 
 .appeningHeader > h3{
 	float:left;
+	margin-bottom: 0;
 }
 
 .newAppeningButton{
@@ -122,19 +124,23 @@ a.button:link, a.button:visited, a.button:active{
 /* each appening */
 
 .appeningEntries{
-	
+	background-color: $background;
 }
 
-.appeningEntries:nth-child(2){
+.appening{
+	padding: 1em;
+}
+
+.appening:nth-child(even){
 	background-color: $backgroundShade;
 }
 
 .appening h4{
-	float:left;
+	left:0;
+
 }
 
 .appening p{
-	float: right;
 }
 
 /* add new appening, form */
