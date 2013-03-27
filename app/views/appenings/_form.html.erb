@@ -3,6 +3,6 @@
   	<h3> Add a new appening </h3>
     <%= f.text_field :title, id: "#{params[:action]}_appening_field", placeholder: "What do you want to accomplish?" %>
     <%= f.submit %>
-    <%= link_to "Cancel", cancel_appenings_path(appening_id: @appening, original_action: params[:action]), remote: true %>
+    <%= link_to "<i class='icon-remove-sign'></i>".html_safe, cancel_appenings_path(appening_id: @appening, original_action: params[:action]), remote: true %>
   </div>
 <% end %>
