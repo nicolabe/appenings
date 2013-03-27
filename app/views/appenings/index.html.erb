@@ -13,7 +13,8 @@
       <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
       <p>Started: <%= appening.created_at.strftime("%D") %></p>
       <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %> |
-      <%= link_to "Edit", edit_appening_path(appening), remote: true %>
+      <%= link_to "Edit", edit_appening_path(appening), remote: true %> |
+      <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?" %>
       <%= button_to "Accomplished", accomplish_appening_path(appening) %>
       <% appening.comments_list.each do |comment| %> 
       <div class="comments">
@@ -37,6 +38,7 @@
 
     <div class="appening">
       <b><%= appening.title %></b>
+      <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?" %>
       <% appening.comments_list.each do |comment| %> 
         <div class="comments">
           <%= comment.author %> wrote: 
