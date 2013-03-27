@@ -49,7 +49,7 @@ class AppeningsController < ApplicationController
         format.html { redirect_to "/appenings/", notice: 'Appening was successfully created.' }
         format.json { render json: @appening, status: :created, location: @appening }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to "/appenings/", alert: 'Appening could not be created, need content.' }
         format.json { render json: @appening.errors, status: :unprocessable_entity }
       end
     end
