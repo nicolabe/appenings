@@ -102,12 +102,6 @@ a.button:link, a.button:visited, a.button:active{
 	margin-bottom: 4em;
 }
 
-.new_appening_field{
-	font-size: 2em;
-
-}
-
-
 .appeningHeader{
 	background-color: $brown;
 	color: $accent2;
@@ -143,19 +137,37 @@ a.button:link, a.button:visited, a.button:active{
 	float: right;
 }
 
-/* add new appening form */
+/* add new appening, form */
 
 .newAppening{
 	margin-bottom: 2em;
 }
 
-.newAppening input{
+.newAppening h3{
+	margin-bottom: 0;
+	margin-left: .2em;
+}
+
+.cancellNewAppening{
+	font-size: 1.8em;
+	text-decoration: none;
+	float:right;
+}
+
+.cancellNewAppening a, .cancellNewAppening a:visited{
+	color: $accent;
+	text-decoration: none;
+}
+
+.newAppening input[type="text"]{
 	font-size: 1.4em;
 	padding: .2em;
 	border: 1px solid $backgroundShade;
 	outline:0;
-	width:20em;
+	width:94%;
+	float: left;
 }
+
 
 /* end appening listing */
 
