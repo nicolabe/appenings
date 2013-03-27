@@ -1,28 +1,11 @@
-<p>Leave a comment</p>
-<%= form_for [model,comment] do |f| %>
-  <% if model.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(model.errors.count, "error") %> prohibited this comment from being saved:</h2>
-      <ul>
-      <% model.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="comment_form_container">
+<%= form_for([@appening, @comment]) do |f| %>
+  <div class="grid_8 push_2 newAppening">
+    <h4> Leave a comment </h4>
+    <span class="cancellNewAppening">
+      <%= link_to "<i class='icon-remove'></i>".html_safe, cancel_appening_comments_path(appening_id: @appening, original_action: params[:action]), remote: true %>
+    </span>
+    <%= f.text_field :text, id: "new_comment", placeholder: "Say hi!" %>
     </div>
   <% end %>
-  <% if comment.parent %>
-    <%= f.hidden_field :parent, :value => comment.parent %>
-  <% end %>
-  <%= f.hidden_field :author, :value => current_user.username %>
-  <div class="field">
-    <b><%= f.label :author %></b>:<br />
-    <%= current_user.username %>
-  </div>
-   <div class="field">
-    <%= f.label :text %><br />
-    <%= f.text_area :text %>
-  </div>
-<div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

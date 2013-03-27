@@ -13,15 +13,17 @@
       <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
       <div class="appeningActions">
         <p>Started: <%= appening.created_at.strftime("%D") %></p>
-        <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id) %>
+        <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
+        <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true %>
         <%= link_to "Edit", edit_appening_path(appening), remote: true %>
         <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?" %>
         <%= button_to "Accomplished", accomplish_appening_path(appening) %>
       </div>
-      <% appening.comments_list.each do |comment| %> 
+      <% appening.comments.each do |comment| %> 
       <div class="comments">
         <%= comment.author %> wrote: 
         <%= comment.text %>
+        <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?" if comment.author == current_user.username %>
       </div>
       <% end %>
     </div>
@@ -37,18 +39,20 @@
 
   <div class="appeningEntries">
     <% @accomplished_appenings.each do |appening| %>
-
-    <div class="appening">
-      <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
-      <div class="appeningActions">
-      <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?" %>
-      <% appening.comments_list.each do |comment| %> 
-      <div class="comments">
-        <%= comment.author %> wrote: 
-        <%= comment.text %>
+      <div class="appening">
+        <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
+        <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
+        <div class="appeningActions">
+          <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true %> |
+          <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?" %>
+          <% appening.comments.each do |comment| %> 
+            <div class="comments">
+              <%= comment.author %> wrote: 
+              <%= comment.text %>
+              <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?" if comment.author == current_user.username %>
+            </div>
+          <% end %>
       </div>
-      <% end %>
-    </div>
     <% end %>
   </div>
 </div>

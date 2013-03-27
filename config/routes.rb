@@ -11,7 +11,9 @@ Appenings::Application.routes.draw do
     get :cancel, :on => :collection
     post :accomplish, :on => :member
     post :copy, :on => :member
-    resources :comments
+    resources :comments do
+      get :cancel, :on => :collection
+    end
   end
 
   root :to => "login#index"
