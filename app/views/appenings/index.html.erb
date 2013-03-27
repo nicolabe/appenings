@@ -32,18 +32,18 @@
     <h3>Accomplished appenings</h3>
   </div>
 
-<div class="appeningEntries">
-  <% @accomplished_appenings.each do |appening| %>
+  <div class="appeningEntries">
+    <% @accomplished_appenings.each do |appening| %>
 
-  <div class="appening">
-    <b><%= appening.title %></b>
-    <% appening.comments_list.each do |comment| %> 
-    <div class="comments">
-      <%= comment.author %> wrote: 
-      <%= comment.text %>
+    <div class="appening">
+      <b><%= appening.title %></b>
+      <% appening.comments_list.each do |comment| %> 
+      <div class="comments">
+        <%= comment.author %> wrote: 
+        <%= comment.text %>
+      </div>
+      <% end %>
     </div>
     <% end %>
   </div>
-</div>
-<% end %>
 </div>
