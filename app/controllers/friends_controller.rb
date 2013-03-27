@@ -16,6 +16,6 @@ class FriendsController < ApplicationController
     current_user.friends << @friend.id
     current_user.save
 
-    redirect_to appenings_path, notice: "#{@friend.username} added as a friend."
+    redirect_to friends_path, notice: "#{@friend.username} added as a friend."
   end
 end

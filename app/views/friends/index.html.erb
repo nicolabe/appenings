@@ -6,7 +6,7 @@
       <% friend.appenings.each do |appening| %>
         <b><%= appening.title %></b><br/>
         Status: <%= appening.accomplished ? "Accomplished" : "In progress" %>
-        <% appening.comments_list.each do |comment| %> 
+        <% appening.comments.each do |comment| %> 
           <div class="comments">
             <%= comment.author %> wrote: <br/>
             <%= comment.text %><br/>
