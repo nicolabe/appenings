@@ -33,18 +33,19 @@
     <h3>Accomplished appenings</h3>
   </div>
 
-<div class="appeningEntries">
-  <% @accomplished_appenings.each do |appening| %>
+  <div class="appeningEntries">
+    <% @accomplished_appenings.each do |appening| %>
 
     <div class="appening">
       <b><%= appening.title %></b>
       <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?" %>
       <% appening.comments_list.each do |comment| %> 
-        <div class="comments">
-          <%= comment.author %> wrote: 
-          <%= comment.text %>
-        </div>
+      <div class="comments">
+        <%= comment.author %> wrote: 
+        <%= comment.text %>
+      </div>
       <% end %>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
