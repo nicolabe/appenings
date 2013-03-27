@@ -1,9 +1,11 @@
-<%= form_for(@appening) do |f| %>
-<div class="grid_8 push_2 newAppening">
-	<h3> Add a new appening </h3>
-	<span class="cancellNewAppening">
-		<%= link_to "<i class='icon-remove'></i>".html_safe, cancel_appenings_path(appening_id: @appening, original_action: params[:action]), remote: true %>
-	</span>
-	<%= f.text_field :title, id: "#{params[:action]}_appening_field", placeholder: "What do you want to accomplish?" %>
+<div class="appening_form_container">
+  <%= form_for(@appening) do |f| %>
+  <div class="grid_8 push_2 newAppening">
+    <h3> Add a new appening </h3>
+    <span class="cancellNewAppening">
+      <%= link_to "<i class='icon-remove'></i>".html_safe, cancel_appenings_path(appening_id: @appening, original_action: params[:action]), remote: true %>
+    </span>
+    <%= f.text_field :title, id: "#{params[:action]}_appening_field", placeholder: "What do you want to accomplish?" %>
+  </div>
+  <% end %>
 </div>
-<% end %>

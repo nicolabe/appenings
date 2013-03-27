@@ -1,4 +1,3 @@
-$("#edit_appening_field").remove();
+$(".appening_form_container").html("");
 $("#appening_<%= @appening.id %>").html("<%= escape_javascript( render partial: "form" ) %>");
 $("#edit_appening_field").focus();
-$("#new_appening_field").remove();
