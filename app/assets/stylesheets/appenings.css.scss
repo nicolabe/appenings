@@ -2,12 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$background: #E0D1A3;
-$backgroundShade: #C7B991;
-$font: #5E7D4D;
-$accent: #C74223;
-$accent2: #232621;
-$brown: #7D603E;
+$background: #fff;
+$headerBackground: #019875;
+$headerBorder: #015844;
+$headerFont: #232621;
+$paragraphFont: #232621;
+$icons: #1693CB;
+$red: #CB1630;
+$green: #019875;
 
 @font-face {
 	font: {
@@ -16,6 +18,11 @@ $brown: #7D603E;
 		style: 'normal';
 	}
 	src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
+}
+
+a, a:hover, a:visited, a:link{
+	text-decoration: none;
+	color: $icons;
 }
 
 .friendButton{
@@ -58,7 +65,7 @@ topbar elements
 	left:0;
 	width: 100%;
 	font-size: 2em;
-	background-color: $accent2;
+	background-color: $headerBackground;
 	height: 1.5em;
 }
 
@@ -68,14 +75,14 @@ topbar elements
 
 .logo{
 	font-family: Franchise, helvetica;
-	color:$font;
+	color:$headerFont;
 	margin-left: .4em;
 }
 
 .username, .username:visited{
 	font-family: Franchise, helvetica;
 	position: absolute;
-	color: $accent;
+	color: $headerFont;
 	left:45%;
 	font-size: 1.3em;
 	top: -0.1em;
@@ -104,8 +111,8 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 .appeningHeader{
-	background-color: $brown;
-	color: $accent2;
+	background-color: $headerBackground;
+	color: $headerFont;
 	height: 2.3em;
 	padding: 1em;
 }
@@ -113,11 +120,13 @@ a.button:link, a.button:visited, a.button:active{
 .appeningHeader > h3{
 	float:left;
 	margin-bottom: 0;
+	border-style: solid;
+	border-bottom: 2em;
+	border-color: red;
 }
 
 .newAppeningButton{
-	text-decoration: none;
-	color: #5E7D4D;
+	color: $green;
 	float:right;
 	font-size: 1.5em;
 }
@@ -132,7 +141,7 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 .appening:nth-child(even){
-	background-color: $backgroundShade;
+	background-color: $background;
 }
 
 .appening h4{
@@ -162,14 +171,14 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 .cancellNewAppening a, .cancellNewAppening a:visited{
-	color: $accent;
+	color: $red;
 	text-decoration: none;
 }
 
 .newAppening input[type="text"]{
 	font-size: 1.4em;
 	padding: .2em;
-	border: 1px solid $backgroundShade;
+	border: 1px solid $headerFont;
 	outline:0;
 	width:94%;
 	float: left;
@@ -183,11 +192,11 @@ h1{
 	font-size: 6em;
 	margin-bottom: 0;
 	border-bottom: 1px solid black;
-	color: $font;
+	color: $headerFont;
 }
 
 .ribbon{
-	background-color: $accent;
+	background-color: $headerBackground;
 }
 
 h3{

@@ -1,7 +1,11 @@
-$background: #E0D1A3;
-$font: #5E7D4D;
-$accent: #C74223;
-$accent2: #232621;
+$background: #fff;
+$headerBackground: #019875;
+$headerBorder: #015844;
+$headerFont: #232621;
+$paragraphFont: #232621;
+$icons: #1693CB;
+$red: #CB1630;
+$green: #019875;
 
 @font-face {
     font: {
@@ -17,11 +21,8 @@ body{
 	font-family: klavika-web, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
 }
 
-a.button:link, a.button:visited, a.button:active{
-	border: 1px solid black;
-	padding: 4px;
-	text-decoration: none;
-	color: black;
+.header{
+	border-top: 4px solid $headerBorder;
 }
 
 h1{
@@ -29,26 +30,5 @@ h1{
 	font-size: 6em;
 	margin-bottom: 0;
 	border-bottom: 1px solid black;
-	color: $font;
-}
-
-.ribbon{
-	background-color: $accent;
-}
-
-h3{
-}
-
-a.button:hover{
-	background-color: grey;
-}
-
-#loginBox{
-	margin-top: 15%;
-	text-align: center;
-	background-color: $background;
-	-webkit-box-shadow: 0px 2px 30px #000;
-	-moz-box-shadow:    0px 2px 30px #000;
-	box-shadow:         0px 2px 30px #000;
-	padding-bottom: 20px;
+	color: $paragraphFont;
 }
