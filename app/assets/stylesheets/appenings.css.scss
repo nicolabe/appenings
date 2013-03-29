@@ -99,7 +99,7 @@ a.button:link, a.button:visited, a.button:active{
 	color: black;
 }
 
-/* appening listing */
+/* appenings list */
 
 .appeningList{
 	position: relative;
@@ -127,7 +127,7 @@ a.button:link, a.button:visited, a.button:active{
 	float:right;
 	font-size: 1.5em;
 }
-/* each appening */
+/* individual appening */
 
 .appeningEntries{
 	background-color: $background;
@@ -154,8 +154,6 @@ div[id*="appening_"]{
 	color: #fff;
 	text-align: center;
 }
-
-
 
 .appening:nth-child(even) div[id*="appening_"],
 .appening:nth-child(even) > a > i{
