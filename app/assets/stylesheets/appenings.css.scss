@@ -64,7 +64,7 @@ topbar elements
 	width: 100%;
 	font-size: 2em;
 	background-color: $headerBackground;
-	height: 1.5em;
+	height: 40px;
 }
 
 .container{
@@ -102,14 +102,16 @@ a.button:link, a.button:visited, a.button:active{
 /* appening listing */
 
 .appeningList{
-	margin-bottom: 4em;
+	position: relative;
 }
 
 .appeningHeader{
+	z-index: 100;
 	background-color: $headerBackground;
 	color: $headerFont;
-	height: 2.3em;
-	padding: 1em;
+	height: 30px;
+	padding: 5px;
+	margin-bottom: 2px;
 }
 
 .appeningHeader > h3{
@@ -132,41 +134,48 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 .appening{
-	background-color: $shade1;
 	height:3em;
-	padding: 0 1em 0 1em;
 }
 
-.appening:after{
-	clear:both;
+div[id*="appening_"]{
+	width: 856px !important;
+	margin-bottom:2px;
+	height: 100%;
+	margin-right: 0;
+	background-color: $shade1;
 }
 
-.appening:nth-child(even){
+.appening > a > i{
+	margin-left: 2px;
+	margin-right: 0;
+	background-color: $shade1;
+	font-size: 3em;
+	height: 100%;
+	color: #fff;
+	text-align: center;
+}
+
+
+
+.appening:nth-child(even) div[id*="appening_"],
+.appening:nth-child(even) > a > i{
 	background-color: $shade2;
 }
 
-.date{
-
-}
-
-.appeningActions{
-}
-
 .appening h4{
-	float:left;
 	height: 1em;
-	margin: 0;
 }
 
 .appening p, .appening a{
-	float:right;
-	height: 1em;
-	margin: 0;
+	margin-bottom:2px;
 }
 
-.appening a{
-	font-size: 1.4em;
-	padding-right: .4em;
+.appening .icon-ok:hover{
+	color: $green;
+}
+
+.appening .icon-remove:hover{
+	color: $red;
 }
 
 /* add new appening, form */
@@ -183,8 +192,6 @@ a.button:link, a.button:visited, a.button:active{
 .cancellNewAppening{
 	font-size: 2em;
 	text-decoration: none;
-	float:right;
-	margin-top: -.2em;
 }
 
 .cancellNewAppening a, .cancellNewAppening a:visited{

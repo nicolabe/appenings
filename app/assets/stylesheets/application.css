@@ -9,8 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= jquery-ui-1.10.2.custom.css
- *= require reset
  *= require font-awesome
+ *= require reset
  *= require 960.css
  *= require text.css
  *= require_self

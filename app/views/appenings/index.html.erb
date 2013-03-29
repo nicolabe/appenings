@@ -1,6 +1,6 @@
 <div id="newAppening"></div>
 
-<div class="grid_12 appeningList">
+<div class="grid_16 appeningList">
   <div class="appeningHeader header">
     <h3>Unfinished appenings</h3>
     <%= link_to "new <i class='icon-plus'></i>".html_safe, new_appening_path, :class => "newAppeningButton", remote: true %>
@@ -10,15 +10,15 @@
 
     <% @appenings.each do |appening| %>
     <div class="appening">
-      <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
-      <div class="appeningActions">
+      <div id="appening_<%= appening.id %>" class="grid_14 alpha">
+        <h4><%= appening.title %></h4>
         <p><%= appening.created_at.strftime("%D") %></p>
-        <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
-        <%= link_to "<i class='icon-remove-sign'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?" %>
         <%= link_to "<i class='icon-pencil'></i>".html_safe, edit_appening_path(appening), remote: true %>
         <%= link_to "<i class='icon-comment-alt'></i>".html_safe, new_appening_comment_path(appening_id: appening.id), remote: true %>
-        <%= link_to "<i class='icon-ok'></i>".html_safe, accomplish_appening_path(appening), method: :post %>
       </div>
+      <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
+      <%= link_to "<i class='icon-ok grid_1 '></i>".html_safe, accomplish_appening_path(appening), method: :post %>
+      <%= link_to "<i class='icon-remove grid_1 omega'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?" %>
       <% appening.comments.each do |comment| %> 
       <div class="comments">
         <%= comment.author %> wrote: 
@@ -31,8 +31,8 @@
   </div>
 </div>
 
-<div class="grid_12 appeningList">
-  <div class="appeningHeader">
+<div class="grid_16 appeningList">
+  <div class="appeningHeader header">
     <h3>Accomplished appenings</h3>
   </div>
 
