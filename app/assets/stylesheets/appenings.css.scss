@@ -140,17 +140,17 @@ a.button:link, a.button:visited, a.button:active{
 div[id*="appening_"]{
 	width: 856px !important;
 	margin-bottom:2px;
-	height: 100%;
+	height: 40px;
 	margin-right: 0;
 	background-color: $shade1;
 }
 
-.appening > a > i{
+.appening i{
 	margin-left: 2px;
 	margin-right: 0;
 	background-color: $shade1;
 	font-size: 3em;
-	height: 100%;
+	height: 40px;
 	color: #fff;
 	text-align: center;
 }
@@ -161,11 +161,14 @@ div[id*="appening_"]{
 }
 
 .appening h4{
+	margin-left: .4em;
 	height: 1em;
+	margin-top: -.4em;
 }
 
-.appening p, .appening a{
-	margin-bottom:2px;
+.appening p{
+	margin: 0;
+	font-size: .8em;
 }
 
 .appening .icon-ok:hover{
@@ -178,32 +181,19 @@ div[id*="appening_"]{
 
 /* add new appening, form */
 
-.newAppening{
-	margin-bottom: 2em;
+#newAppening{
+	display:none;
 }
 
-.newAppening h3{
-	margin-bottom: 0;
-	margin-left: .2em;
-}
-
-.cancellNewAppening{
-	font-size: 2em;
-	text-decoration: none;
-}
-
-.cancellNewAppening a, .cancellNewAppening a:visited{
-	color: $red;
-	text-decoration: none;
-}
-
-.newAppening input[type="text"]{
-	font-size: 1.4em;
-	padding: .2em;
-	border: 1px solid $headerFont;
-	outline:0;
-	width:94%;
-	float: left;
+#newAppening input[type="text"]{
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 19px;
+	width: 100%;
+	font-weight: bold;
+	margin-left: .4em;
+	margin-top: .4em;
 }
 
 
