@@ -3,9 +3,12 @@ $headerBackground: #019875;
 $headerBorder: #015844;
 $headerFont: #232621;
 $paragraphFont: #232621;
-$icons: #1693CB;
+$blue: #1693CB;
 $red: #CB1630;
 $green: #019875;
+
+$shade1: rgba(2,228,176,.2);
+$shade2: rgba(2,228,176,.4);
 
 @font-face {
     font: {
@@ -16,8 +19,36 @@ $green: #019875;
     src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
 }
 
+@font-face {
+    font: {
+       family: 'Airstream';
+       weight: 'normal';
+       style: 'normal';
+    }
+    src: asset-url('AirstreamNF.ttf', font) format('truetype');
+}
+
+a, a:hover, a:visited, a:link{
+	text-decoration: none;
+	color: $paragraphFont;
+	outline: 0;
+}
+
+.redIcon a{
+	color: $red;
+}
+
+.greenIcon a{
+	color: $green;
+}
+
+.blueIcon a{
+	color: $blue;
+}
+
 body{
 	background-color: $background;
+	text-rendering: optimizeLegibility;
 	font-family: klavika-web, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
 }
 
@@ -25,8 +56,13 @@ body{
 	border-top: 4px solid $headerBorder;
 }
 
+h1, h2, h3, h4, h5{
+	text-rendering: optimizeLegibility;
+}
+
+
 h1{
-	font-family: Franchise;
+	font-family: Airstream;
 	font-size: 6em;
 	margin-bottom: 0;
 	border-bottom: 1px solid black;

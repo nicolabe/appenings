@@ -1,6 +1,6 @@
 <div class="comment_form_container">
 <%= form_for([@appening, @comment]) do |f| %>
-  <div class="grid_8 push_2 newAppening">
+  <div class="">
     <h4> Leave a comment </h4>
     <span class="cancellNewAppening">
       <%= link_to "<i class='icon-remove'></i>".html_safe, cancel_appening_comments_path(appening_id: @appening, original_action: params[:action]), remote: true %>

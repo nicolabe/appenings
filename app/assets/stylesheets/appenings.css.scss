@@ -7,9 +7,12 @@ $headerBackground: #019875;
 $headerBorder: #015844;
 $headerFont: #232621;
 $paragraphFont: #232621;
-$icons: #1693CB;
+$blue: #1693CB;
 $red: #CB1630;
 $green: #019875;
+
+$shade1: rgba(2,228,176,.2);
+$shade2: rgba(2,228,176,.4);
 
 @font-face {
 	font: {
@@ -18,11 +21,6 @@ $green: #019875;
 		style: 'normal';
 	}
 	src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
-}
-
-a, a:hover, a:visited, a:link{
-	text-decoration: none;
-	color: $icons;
 }
 
 .friendButton{
@@ -74,13 +72,13 @@ topbar elements
 }
 
 .logo{
-	font-family: Franchise, helvetica;
+	font-family: Airstream, helvetica;
 	color:$headerFont;
 	margin-left: .4em;
 }
 
 .username, .username:visited{
-	font-family: Franchise, helvetica;
+	font-family: Airstream, helvetica;
 	position: absolute;
 	color: $headerFont;
 	left:45%;
@@ -104,9 +102,6 @@ a.button:link, a.button:visited, a.button:active{
 /* appening listing */
 
 .appeningList{
-	-webkit-box-shadow: 0px 2px 5px #000;
-	-moz-box-shadow:    0px 2px 5px #000;
-	box-shadow:         0px 2px 5px #000;
 	margin-bottom: 4em;
 }
 
@@ -137,19 +132,41 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 .appening{
-	padding: 1em;
+	background-color: $shade1;
+	height:3em;
+	padding: 0 1em 0 1em;
+}
+
+.appening:after{
+	clear:both;
 }
 
 .appening:nth-child(even){
-	background-color: $background;
+	background-color: $shade2;
+}
+
+.date{
+
+}
+
+.appeningActions{
 }
 
 .appening h4{
-	left:0;
-
+	float:left;
+	height: 1em;
+	margin: 0;
 }
 
-.appening p{
+.appening p, .appening a{
+	float:right;
+	height: 1em;
+	margin: 0;
+}
+
+.appening a{
+	font-size: 1.4em;
+	padding-right: .4em;
 }
 
 /* add new appening, form */
@@ -187,17 +204,10 @@ a.button:link, a.button:visited, a.button:active{
 
 /* end appening listing */
 
-h1{
-	font-family: Franchise;
-	font-size: 6em;
-	margin-bottom: 0;
-	border-bottom: 1px solid black;
-	color: $headerFont;
-}
-
 .ribbon{
 	background-color: $headerBackground;
 }
+
 
 h3{
 	font-family: helvetica, Arial, sans-serif;
@@ -212,9 +222,6 @@ a.button:hover{
 	margin-top: 15%;
 	text-align: center;
 	background-color: $background;
-	-webkit-box-shadow: 0px 2px 30px #000;
-	-moz-box-shadow:    0px 2px 30px #000;
-	box-shadow:         0px 2px 30px #000;
 	padding-bottom: 20px;
 }
 

@@ -9,11 +9,10 @@
 <body>
 	<div class="topBarContainer">
 		<div class="topBar header">
-			<span class="logo">Appenings</span>
 
 			<% if current_user.present? %>
-			<span class="username">
-				<%= link_to current_user.username, appenings_path, :class => "username" %>
+			<span class="logo">
+				<%= link_to "Appenings", appenings_path %>
 			</span>
 			<div class="menu">
 				<%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %>
