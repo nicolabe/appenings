@@ -94,6 +94,7 @@ class AppeningsController < ApplicationController
     @appening = Appening.find(params[:id])
     copy_appening = @appening.dup
     copy_appening.comments.delete_all
+    copy_appening.pictures.delete_all
     copy_appening.accomplished = false
     current_user.appenings << copy_appening
     redirect_to appenings_path, notice: "Good luck!"

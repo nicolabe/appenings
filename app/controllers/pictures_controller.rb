@@ -17,7 +17,7 @@ class PicturesController < ApplicationController
   def remove
     @appening = Appening.find(params[:appening_id])
     picture = @appening.pictures.find(params[:id])
-    picture = nil
+    picture.destroy
     
     respond_to do |format|
       if @appening.save
