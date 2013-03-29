@@ -34,6 +34,10 @@ GEM
     bson_ext (1.8.3)
       bson (~> 1.8.3)
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -69,10 +73,18 @@ GEM
       moped (~> 1.4.2)
       origin (~> 1.0)
       tzinfo (~> 0.3.22)
+    mongoid-paperclip (0.0.8)
+      paperclip (>= 2.3.6)
     moped (1.4.4)
     multi_json (1.7.2)
     origin (1.0.11)
     orm_adapter (0.4.0)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -135,6 +147,7 @@ DEPENDENCIES
   font-awesome-rails
   jquery-rails
   mongoid
+  mongoid-paperclip
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   therubyracer

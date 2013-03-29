@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mongoid'
+gem 'mongoid-paperclip', require: "mongoid_paperclip"
 gem 'bson_ext'
 gem 'devise'
 gem 'font-awesome-rails'
