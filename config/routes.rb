@@ -14,6 +14,10 @@ Appenings::Application.routes.draw do
     resources :comments do
       get :cancel, :on => :collection
     end
+    resources :pictures do
+      post :upload, :on => :collection
+      post :remove, :on => :member
+    end
   end
 
   root :to => "login#index"

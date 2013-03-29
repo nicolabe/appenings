@@ -5,7 +5,7 @@
     <span class="cancellNewAppening">
       <%= link_to "<i class='icon-remove'></i>".html_safe, cancel_appening_comments_path(appening_id: @appening, original_action: params[:action]), remote: true %>
     </span>
-    <%= f.text_field :text, id: "new_comment", placeholder: "Say hi!" %>
+    <%= f.text_field :text, id: "new_comment", placeholder: "Say hi!", autofocus: true %>
     </div>
   <% end %>
 </div>
