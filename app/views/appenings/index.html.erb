@@ -47,8 +47,8 @@
       <h4 id="appening_<%= appening.id %>"><%= appening.title %></h4>
       <div class="appeningPictures">
         <% appening.pictures.each do |picture| %>
-        <p><%= image_tag picture.attachment.url(:medium) %></p>
-        <p><%= link_to "Remove", remove_appening_picture_path(picture, appening_id: appening), method: "post" %></p>
+        <%= image_tag picture.attachment.url(:medium) %>
+        <%= link_to "Remove", remove_appening_picture_path(picture, appening_id: appening), method: "post" %>
         <% end %>
       </div>
       <div class="appeningActions">
