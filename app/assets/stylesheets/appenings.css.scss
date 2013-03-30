@@ -161,12 +161,12 @@ div[id*="appening_"]{
 }
 
 .appening h4{
-	margin-left: .4em;
-	height: 1em;
-	margin-top: -.4em;
+	margin-left: 1em;
+	margin-bottom: 0;
 }
 
 .appening p{
+	display: none;
 	margin: 0;
 	font-size: .8em;
 }
@@ -194,6 +194,12 @@ div[id*="appening_"]{
 	font-weight: bold;
 	margin-left: .4em;
 	margin-top: .4em;
+}
+
+/* appening details */
+
+.appeningDetails {
+	display: none;
 }
 
 

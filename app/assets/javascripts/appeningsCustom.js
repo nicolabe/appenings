@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 //toggle inn and out the field for adding an appening
 $('.newAppeningButton, #cancelAppening').click(function() {
-	$('#newAppening').slideToggle('slow', function() {
+	$('#newAppening').slideToggle('fast', function() {
 		$('.submit').on('click', function(){
 			$(this).closest("form").submit();
 		});

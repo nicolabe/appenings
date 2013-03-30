@@ -2,4 +2,5 @@
   $("#appening_<%= @appening.id %>").html("<h4><%= @appening.title %></h4>");
 <% else %>
   $("#newAppening").html("");
+  $('#newAppening').slideToggle('slow')
 <% end %>
