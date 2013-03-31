@@ -2,7 +2,7 @@ class AppeningsController < ApplicationController
   # GET /appenings
   # GET /appenings.json
   def index
-    @appenings = current_user.appenings.where(accomplished: false)
+    @appenings = current_user.appenings.where(accomplished: false).sort("created_at desc")
     @accomplished_appenings = current_user.appenings.where(accomplished: true)
 
     respond_to do |format|
