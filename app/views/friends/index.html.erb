@@ -4,18 +4,20 @@
     <b><%= friend.username %></b>
     <div class="appening">
       <% friend.appenings.each do |appening| %>
-        <b><%= appening.title %></b><br/>
-        Status: <%= appening.accomplished ? "Accomplished" : "In progress" %>
-        <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
-        <% appening.comments.each do |comment| %> 
-          <div class="comments">
-            <%= comment.author %> wrote: <br/>
-            <%= comment.text %><br/>
-          </div>
+        <% if appening.public %>
+          <b><%= appening.title %></b><br/>
+          Status: <%= appening.accomplished ? "Accomplished" : "In progress" %>
+          <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
+          <% appening.comments.each do |comment| %> 
+            <div class="comments">
+              <%= comment.author %> wrote: <br/>
+              <%= comment.text %><br/>
+            </div>
+          <% end %>
+          <%= button_to "Comment", new_appening_comment_path(appening_id: appening.id), method: "get", remote: true %> 
+          <%= button_to "Copy", copy_appening_path(appening, user_id: friend.id) %>
+          <br/>
         <% end %>
-        <%= button_to "Comment", new_appening_comment_path(appening_id: appening.id), method: "get", remote: true %> 
-        <%= button_to "Copy", copy_appening_path(appening, user_id: friend.id) %>
-        <br/>
       <% end %>
     </div>
   </div>

@@ -3,6 +3,7 @@ class Appening
   include Mongoid::Timestamps
   field :title, type: String
   field :accomplished, type: Boolean, default: false
+  field :public, type: Boolean, default: true
   embeds_many :pictures  
   validates_presence_of :title, :user
 

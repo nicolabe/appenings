@@ -3,6 +3,7 @@
 	<div id= "appening_new " class="newAppening grid_14 alpha">
 		<%= f.text_field :title, autocomplete: "off", id: "#{params[:action]}_appening_field", placeholder: "What do you want to accomplish?" %>
 	</div>
+  Public: <%= f.check_box :public %>
 	<%= link_to "<i class='icon-ok grid_1'></i>".html_safe, "#", :class => "submit" %>
 	<%= link_to "<i class='icon-remove grid_1 omega'></i>".html_safe, cancel_appenings_path(appening_id: @appening, original_action: params[:action]), remote: true, :id => "cancelAppening" %>
 	<% end %>
