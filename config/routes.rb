@@ -5,6 +5,7 @@ Appenings::Application.routes.draw do
 
   resources :friends do
     get :add, :on => :member
+    get :remove, :on => :member
   end
 
   resources :appenings do

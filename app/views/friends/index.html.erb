@@ -2,6 +2,7 @@
 <% @friends.each do |friend| %>
   <div class="friends">
     <b><%= friend.username %></b>
+    <%= link_to "[remove]", remove_friend_path(friend), confirm: "Are you sure you want to remove #{friend.username} as a friend?" %>
     <div class="appening">
       <% friend.appenings.each do |appening| %>
         <% if appening.public %>

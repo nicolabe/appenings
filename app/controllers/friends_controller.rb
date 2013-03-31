@@ -18,4 +18,12 @@ class FriendsController < ApplicationController
 
     redirect_to friends_path, notice: "#{@friend.username} added as a friend."
   end
+
+  def remove
+    @friend = User.find(params[:id])
+    current_user.friends.delete(@friend.id)
+    current_user.save
+    
+    redirect_to friends_path, notice: "#{@friend.username} removed as friend."
+  end
 end
