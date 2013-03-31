@@ -3,7 +3,7 @@ class AppeningsController < ApplicationController
   # GET /appenings.json
   def index
     @appenings = current_user.appenings.where(accomplished: false).sort("created_at desc")
-    @accomplished_appenings = current_user.appenings.where(accomplished: true)
+    @accomplished_appenings = current_user.appenings.where(accomplished: true).sort("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
