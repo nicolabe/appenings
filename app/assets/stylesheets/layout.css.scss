@@ -7,25 +7,37 @@ $blue: #1693CB;
 $red: #CB1630;
 $green: #019875;
 
+
+$headerFont: "Bariol";
+
 $shade1: rgba(2,228,176,.2);
 $shade2: rgba(2,228,176,.4);
 
 @font-face {
-    font: {
-       family: 'Franchise';
-       weight: 'normal';
-       style: 'normal';
-    }
-    src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
+	font: {
+		family: 'Bariol';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Bariol_Regular.otf', font) format('opentype');
 }
 
 @font-face {
-    font: {
-       family: 'Airstream';
-       weight: 'normal';
-       style: 'normal';
-    }
-    src: asset-url('AirstreamNF.ttf', font) format('truetype');
+	font: {
+		family: 'Franchise';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
+}
+
+@font-face {
+	font: {
+		family: 'Airstream';
+		weight: 'normal';
+		style: 'normal';
+	}
+	src: asset-url('AirstreamNF.ttf', font) format('truetype');
 }
 
 a, a:hover, a:visited, a:link{
@@ -46,6 +58,25 @@ a, a:hover, a:visited, a:link{
 	color: $blue;
 }
 
+
+/**
+alerts and notices
+*/
+
+.alert, .notice{
+	position: fixed;
+	width: 30em;
+	text-align: center;
+	border: 1px solid black;
+	border-top: 0;
+	z-index: 1000;
+	margin: 0 auto 0 auto;
+}
+
+/** 
+end og alerts notices
+*/
+
 body{
 	background-color: $background;
 	text-rendering: optimizeLegibility;
@@ -58,11 +89,12 @@ body{
 
 h1, h2, h3, h4, h5{
 	text-rendering: optimizeLegibility;
+	font-family: $headerFont;
 }
 
 
 h1{
-	font-family: Airstream;
+	font-family: $headerFont;
 	font-size: 6em;
 	margin-bottom: 0;
 	border-bottom: 1px solid black;

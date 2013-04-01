@@ -11,6 +11,8 @@ $blue: #1693CB;
 $red: #CB1630;
 $green: #019875;
 
+$headerFont: "Bariol";
+
 $shade1: rgba(2,228,176,.2);
 $shade2: rgba(2,228,176,.4);
 
@@ -72,7 +74,9 @@ topbar elements
 }
 
 .logo{
-	font-family: Airstream, helvetica;
+	font-family: $headerFont, helvetica;
+	font-style: italic;
+	font-weight: bold;
 	color:$headerFont;
 	margin-left: .4em;
 }
@@ -206,6 +210,7 @@ div[id*="appening_"]{
 
 
 /* end appening listing */
+
 
 .ribbon{
 	background-color: $headerBackground;
