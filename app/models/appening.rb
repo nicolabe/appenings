@@ -4,6 +4,7 @@ class Appening
   field :title, type: String
   field :accomplished, type: Boolean, default: false
   field :public, type: Boolean, default: true
+  field :story, type: String
   embeds_many :pictures  
   validates_presence_of :title, :user
 
