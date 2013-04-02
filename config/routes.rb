@@ -9,6 +9,7 @@ Appenings::Application.routes.draw do
   end
 
   resources :appenings do
+    get :story, :on => :member
     get :cancel, :on => :collection
     post :accomplish, :on => :member
     post :copy, :on => :member

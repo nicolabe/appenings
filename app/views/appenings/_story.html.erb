@@ -1,0 +1,10 @@
+<div class="comment_form_container">
+<%= form_for(@appening) do |f| %>
+  <h4> Tell your story </h4>
+  <span class="cancellNewAppening">
+  </span>
+  <%= f.text_area :story, id: "new_story", autofocus: true, size: "40x8" %>
+  <%= link_to "<i class='icon-remove'></i>".html_safe, cancel_appening_comments_path(appening_id: @appening, original_action: params[:action]), remote: true %>
+  <%= f.submit "Save story" %>
+  <% end %>
+</div>

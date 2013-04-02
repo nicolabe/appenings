@@ -1,8 +1,13 @@
 <div class="appening">
   <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
   <h4 id="appening_<%= appening.id %>" class="grid_8"><%= appening.title %></h4>
+  <%= link_to "Share your story", story_appening_path(appening), remote: true, class: "grid_2" %>
   <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true, class: "grid_1" %>
   <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?", class: "grid_1" %>
+  <div class="clear"></div>
+  <div class="grid_16">
+    <p class="story"><%= appening.story %></p>
+  </div>
   <div class="clear"></div>
   <div class="appeningPictures">
     <% appening.pictures.each do |picture| %>

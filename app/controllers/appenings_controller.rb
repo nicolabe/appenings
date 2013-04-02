@@ -108,4 +108,12 @@ class AppeningsController < ApplicationController
       format.js
     end
   end
+
+  def story
+    @appening = Appening.find(params[:id])
+    
+    respond_to do |format|
+      format.js
+    end
+  end
 end
