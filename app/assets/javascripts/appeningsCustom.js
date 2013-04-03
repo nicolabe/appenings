@@ -5,6 +5,9 @@ $(document).ready(function() {
 	// $(this).append(" BAM! " + i);
 	// });
 
+/** 
+expand an appening to show further details.
+*/
 $('div[id^="appening_"]').click(function() {
 	$(this).siblings('.appeningDetails').slideToggle('fast');
 });
@@ -18,5 +21,9 @@ $('.newAppeningButton, #cancelAppening').click(function() {
 		});
 	});
 });
+
+
+//keep headers on top of waypoint using the waypoints plugin
+$('.appeningHeader').waypoint('sticky');
 
 });

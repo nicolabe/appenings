@@ -40,6 +40,11 @@ $shade2: rgba(2,228,176,.4);
 	src: asset-url('AirstreamNF.ttf', font) format('truetype');
 }
 
+.stuck{
+	position: fixed;
+	top:0;
+}
+
 a, a:hover, a:visited, a:link{
 	text-decoration: none;
 	color: $paragraphFont;
@@ -85,7 +90,6 @@ body{
 
 .header{
 	border-top: 4px solid $headerBorder;
-  z-index: 1000;
   border-bottom: 1px solid black;
 }
 

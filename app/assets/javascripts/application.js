@@ -14,4 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery-ui-1.10.2.custom.min.js
+//= require waypoints.min.js
 //= require appeningsCustom.js
+//= require waypoints.sticky.min.js
+
