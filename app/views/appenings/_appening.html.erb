@@ -1,11 +1,11 @@
 <div class="appening">
-  <%# appening %>
+  
   <div id="appening_<%= appening.id %>" class="grid_14 alpha">
     <h4><%= appening.title %></h4>
   </div>
   <%= link_to "<i class='icon-ok grid_1 '></i>".html_safe, accomplish_appening_path(appening), method: :post %>
   <%= link_to "<i class='icon-remove grid_1 omega'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?" %>
-  <%# appening  details%>
+
   <div class="appeningDetails grid_16 alpha omega">
     <p><%= appening.created_at.strftime("%D") %></p>
     <%= link_to "<i class='icon-pencil'></i>".html_safe, edit_appening_path(appening), remote: true %>

@@ -1,3 +1,10 @@
-$(".appening_form_container").html("");
-$("#newAppening").html("<%= escape_javascript( render partial: "form" ) %>");
-$("#new_appening_field").focus();
+console.log('test1');
+if($('#newAppening').is(":visible")){
+	console.log('kuk2');
+	$(".appening_form_container").html("");
+	$("#newAppening").html("<%= escape_javascript( render partial: "form" ) %>");
+	$("#new_appening_field").focus();
+} else {
+	console.log('test3');
+	//it's visible, do nothing
+}

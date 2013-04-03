@@ -13,17 +13,25 @@ $('div[id^="appening_"]').click(function() {
 });
 
 
-//toggle inn and out the field for adding an appening
-$('.newAppeningButton, #cancelAppening').click(function() {
-	$('#newAppening').toggle('drop', function() {
-		$('.submit').on('click', function(){
-			$(this).closest("form").submit();
+//show field if hidden, if visible scroll to field
+$('.newAppeningButton').click(function() {
+	if(!$('#newAppening').is(":visible")){
+		$('#newAppening').show('drop', function() {
+			$('.submit').on('click', function(){
+				$(this).closest("form").submit();
+			});
 		});
-	});
+	} else {
+		//scroll to top
+		$('html, body').animate({
+			scrollTop: $(".appeningList").offset().top
+		}, 300);
+
+	}
 });
 
 
-//keep headers on top of waypoint using the waypoints plugin
+//keep headers on top of topbar. using the waypoints plugin
 $('.appeningHeader').waypoint('sticky');
 
 });
