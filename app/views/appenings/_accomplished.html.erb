@@ -1,32 +1,36 @@
 <div class="appening">
   <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
-  <h4 id="appening_<%= appening.id %>" class="grid_8"><%= appening.title %></h4>
-  <%= link_to "Share your story", story_appening_path(appening), remote: true, class: "grid_2" %>
-  <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true, class: "grid_1" %>
-  <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?", class: "grid_1" %>
-  <div class="clear"></div>
-  <div class="grid_16">
-    <p class="story"><%= appening.story %></p>
+  <div id="appening_<%= appening.id %>" >
+    <h4><%= appening.title %></h4>
   </div>
-  <div class="clear"></div>
-  <div class="appeningPictures">
-    <% appening.pictures.each do |picture| %>
+  <div class="appeningDetails grid_16 alpha omega">
+    <%= link_to "Share your story", story_appening_path(appening), remote: true, class: "grid_2" %>
+    <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true, class: "grid_1" %>
+    <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?", class: "grid_1" %>
+    <div class="clear"></div>
+    <div class="grid_16">
+      <p class="story"><%= appening.story %></p>
+    </div>
+    <div class="clear"></div>
+    <div class="appeningPictures">
+      <% appening.pictures.each do |picture| %>
       <%= image_tag picture.attachment.url(:medium), class: "grid_4 alpha" %>
       <%= link_to "Remove", remove_appening_picture_path(picture, appening_id: appening), method: "post", class: "grid_2 omega" %>
-    <% end %>
-  </div>
-  <div class="grid_12">
-    <b class="grid_2 alpha">Upload picture:</b>
-    <%= form_for appening, url: upload_appening_pictures_path(appening_id: appening.id), html: { method: "post"} do |f| %>
+      <% end %>
+    </div>
+    <div class="grid_12">
+      <b class="grid_2 alpha">Upload picture:</b>
+      <%= form_for appening, url: upload_appening_pictures_path(appening_id: appening.id), html: { method: "post"} do |f| %>
       <%= f.file_field :attachment, class: "grid_4" %>
       <%= f.submit "Upload", class: "grid_2 omega" %>
-    <% end %>
-  </div>
-  <% appening.comments.each do |comment| %> 
+      <% end %>
+    </div>
+    <% appening.comments.each do |comment| %> 
     <div class="comments grid_8">
       <b><%= comment.author %> wrote: </b>
       <p><%= comment.text %></p>
       <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?", class: "grid_1" if comment.author == current_user.username %>
     </div>
+  </div>
   <% end %>
 </div>

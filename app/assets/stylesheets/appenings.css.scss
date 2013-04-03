@@ -82,16 +82,6 @@ topbar elements
 	margin-left: .4em;
 }
 
-.username, .username:visited{
-	font-family: Airstream, helvetica;
-	position: absolute;
-	color: $headerFont;
-	left:45%;
-	font-size: 1.3em;
-	top: -0.1em;
-	text-decoration: none;
-}
-
 .logoutButton{
 	text-decoration: none;
 	color:red;
@@ -105,10 +95,6 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 /* appenings list */
-
-.appeningList{
-	position: relative;
-}
 
 .appeningHeader{
 	position: relative;
@@ -138,7 +124,7 @@ a.button:link, a.button:visited, a.button:active{
 .appeningEntries{
 	position: relative;
 	background-color: $background;
-	z-index: -10000;
+	z-index: 0;
 }
 
 .appening{
