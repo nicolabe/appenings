@@ -201,13 +201,19 @@ div[id*="appening_"]{
 }
 
 .appeningDetails > a {
-	position:relative;
-	top:0;
-	left:91.4%;
+	position: relative;
+	left:91.5%;
+	bottom:20px;
 }
 
-.appeningdetails > a {
-	background-color: none;
+.appeningDetails > a > i {
+	height: 40px;
+	width: 40px;
+	margin: 0;
+	background-color: transparent;
+	border: 2px solid $background;
+	border-right:0;
+	margin-left: -4px;
 }
 
 
