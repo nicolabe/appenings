@@ -36,6 +36,14 @@ When /^I submit the form$/ do
   page.evaluate_script("document.forms[0].submit()")
 end
 
+When /^I confirm the dialog box$/ do
+  page.driver.browser.switch_to.alert.accept
+end
+
+When /^I wait (\d+) seconds$/ do |seconds|
+  sleep(seconds.to_i)
+end
+
 Then /^I should see "(.*?)"$/ do |text|
   page.should have_content(text)
 end

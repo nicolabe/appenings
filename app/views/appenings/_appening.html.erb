@@ -4,7 +4,7 @@
     <h4><%= appening.title %></h4>
   </div>
   <%= link_to "<i class='icon-ok grid_1 '></i>".html_safe, accomplish_appening_path(appening), method: :post, id: "accomplish_appening" %>
-  <%= link_to "<i class='icon-remove grid_1 omega'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?" %>
+  <%= link_to "<i class='icon-remove grid_1 omega'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?", id: "delete_appening" %>
 
   <div class="appeningDetails grid_16 alpha omega">
     <p><%= appening.created_at.strftime("%D") %></p>

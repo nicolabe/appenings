@@ -30,9 +30,10 @@ Feature: Manage appenings
     When I follow new
     And I fill in "new_appening_field" with "My cool appening"
     And I submit the form
+    And I wait 1 seconds
     Then I should see "My cool appening"
     And I should have 1 appenings
-    And I should see "Appening successfully created."
+    #And I should see "Appening successfully created."
 
   Scenario: Accomplish appening
     Given I have appenings called "I want to climb a mountain"
@@ -40,3 +41,12 @@ Feature: Manage appenings
     When I follow accomplish_appening
     Then I should see "Congratulations, you've accomplished a goal!"
     And I should have 1 accomplished appenings
+
+  @javascript
+  Scenario: Remove appening
+    Given I have appenings called "I want to climb a mountain"
+    And I am logged in as Nico
+    When I follow delete_appening
+    And I confirm the dialog box
+    Then I should have 0 appenings
+    And I should see "Appenings"
