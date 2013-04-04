@@ -34,4 +34,8 @@ $('.newAppeningButton').click(function() {
 //keep headers on top of topbar. using the waypoints plugin
 $('.appeningHeader').waypoint('sticky');
 
+//remove alerts after x ms
+$('.notice').delay(2000).fadeOut();
+$('.alert').delay(2000).fadeOut();
+
 });

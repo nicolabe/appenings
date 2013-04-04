@@ -23,16 +23,14 @@
 	</div>
 
 	<div id="container" class="container_16">
-		<% if notice.present? %>
+		<%= yield %>
+	</div>
+	<% if notice.present? %>
 		<div class="notice"><p><%= notice %></p></div>
 		<% end %>
 
 		<% if alert.present? %>
 		<div class="alert"><p><%= alert %></p></div>
 		<% end %>
-
-
-		<%= yield %>
-	</div>
 </body>
 </html>

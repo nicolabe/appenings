@@ -103,6 +103,7 @@ a.button:link, a.button:visited, a.button:active{
 	color: $headerFont;
 	height: 40px;
 	line-height: 40px;
+	border-top: 0;
 }
 
 .appeningHeader > h3{
