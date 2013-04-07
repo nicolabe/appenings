@@ -11,6 +11,7 @@ Appenings::Application.routes.draw do
   resources :appenings do
     get :story, :on => :member
     get :cancel, :on => :collection
+    get :feed, :on => :collection
     post :accomplish, :on => :member
     post :copy, :on => :member
     resources :comments do

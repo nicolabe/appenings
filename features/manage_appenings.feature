@@ -33,7 +33,7 @@ Feature: Manage appenings
     And I wait 1 seconds
     Then I should see "My cool appening"
     And I should have 1 appenings
-    #And I should see "Appening successfully created."
+    And I should see "Appening was successfully created."
 
   Scenario: Accomplish appening
     Given I have appenings called "I want to climb a mountain"

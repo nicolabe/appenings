@@ -116,4 +116,11 @@ class AppeningsController < ApplicationController
       format.js
     end
   end
+
+  def feed
+    @friends = current_user.friends.map {|friend| User.find(friend)}
+    @appenings = @friends.map do |friend|
+      friend.appenings.last
+    end
+  end
 end
