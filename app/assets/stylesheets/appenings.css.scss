@@ -175,6 +175,14 @@ div[id*="appening_"]{
 	color: $red;
 }
 
+.appening .icon-pencil:hover{
+	color: rgba(255,204,29,1);
+}
+
+.appening .icon-comment-alt:hover{
+	color: $blue;
+}
+
 /* add new appening, form */
 
 #newAppening{
@@ -215,6 +223,8 @@ div[id*="appening_"]{
 	border-right:0;
 	margin-left: -4px;
 }
+
+
 
 
 /* end appening listing */
