@@ -6,17 +6,28 @@ $(document).ready(function() {
 	// });
 
 /** 
-expand an appening to show further details.
+Expand an appening to show further details.
+toggle expanded appenings when expanding a new one.
 */
 $('.appening').click(function() {
 	var $details = $(this).children('.appeningDetails');
 	$details.slideToggle('fast');
-	if($('.open').length > 0){
-		var $open = $('.open');
-		$open.slideToggle('fast');
-		$open.removeClass('open');
+
+	if(!$details.hasClass('open')){
+
+		//if there is an open appening, toggle it
+		if($('.open').length > 0 ){
+			var $open = $('.open');
+			$open.slideToggle('fast');
+			$open.removeClass('open');
+		}
+
+		$details.addClass('open');
+
+	} else {
+		$details.removeClass('open');
 	}
-	$details.addClass('open');
+
 });
 
 
