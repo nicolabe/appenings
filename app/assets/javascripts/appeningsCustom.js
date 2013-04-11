@@ -8,8 +8,15 @@ $(document).ready(function() {
 /** 
 expand an appening to show further details.
 */
-$('div[id^="appening_"]').click(function() {
-	$(this).siblings('.appeningDetails').slideToggle('fast');
+$('.appening').click(function() {
+	var $details = $(this).children('.appeningDetails');
+	$details.slideToggle('fast');
+	if($('.open').length > 0){
+		var $open = $('.open');
+		$open.slideToggle('fast');
+		$open.removeClass('open');
+	}
+	$details.addClass('open');
 });
 
 
