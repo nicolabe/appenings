@@ -9,8 +9,8 @@ $(document).ready(function() {
 Expand an appening to show further details.
 toggle expanded appenings when expanding a new one.
 */
-$('.appening').click(function() {
-	var $details = $(this).children('.appeningDetails');
+$('[id^="appening_"]').click(function() {
+	var $details = $(this).siblings('.appeningDetails');
 	$details.slideToggle('fast');
 
 	if(!$details.hasClass('open')){
