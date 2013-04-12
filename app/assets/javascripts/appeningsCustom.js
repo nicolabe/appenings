@@ -11,6 +11,7 @@ toggle expanded appenings when expanding a new one.
 */
 $('[id^="appening_"]').click(function() {
 	var $details = $(this).siblings('.appeningDetails');
+	$(this).children('i').toggleClass( 'icon-chevron-up icon-chevron-down');
 	$details.slideToggle('fast');
 
 	if(!$details.hasClass('open')){
@@ -31,7 +32,7 @@ $('[id^="appening_"]').click(function() {
 });
 
 
-//show field if hidden, if visible scroll to field
+//show new appening field if hidden, if  not visible scroll to field
 $('.newAppeningButton').click(function() {
 	if(!$('#newAppening').is(":visible")){
 		$('#newAppening').show('drop', function() {
@@ -53,7 +54,8 @@ $('.newAppeningButton').click(function() {
 $('.appeningHeader').waypoint('sticky');
 
 //remove alerts after x ms
-$('.notice').delay(2000).fadeOut();
-$('.alert').delay(2000).fadeOut();
+var x = 2000;
+$('.notice').delay(x).fadeOut();
+$('.alert').delay(x).fadeOut();
 
 });

@@ -134,17 +134,19 @@ a.button:link, a.button:visited, a.button:active{
 }
 
 div[id*="appening_"]{
-	width: 856px !important;
 	height: 40px;
 	margin-right: 0;
 	background-color: $shade1;
 }
 
+div[id*="appening_"] > i{
+	padding-right: .4em;
+	float: right;
+	color: #fff;
+}
+
 .appening i{
-	margin-left: 2px;
-	margin-right: 0;
-	background-color: $shade1;
-	font-size: 3em;
+	font-size: 2em;
 	height: 40px;
 	color: #fff;
 	text-align: center;
@@ -160,6 +162,7 @@ div[id*="appening_"]{
 	margin-left: 1em;
 	margin-bottom: 0;
 	line-height: 40px;
+	float: left;
 }
 
 .appening p{

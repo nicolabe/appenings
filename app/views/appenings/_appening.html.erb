@@ -1,12 +1,13 @@
 <div class="appening">
   
-  <div id="appening_<%= appening.id %>" class="grid_14 alpha">
+  <div id="appening_<%= appening.id %>" class="grid_16 alpha">
     <h4><%= appening.title %></h4>
+    <i class='icon-chevron-up'></i>
   </div>
-  <%= link_to "<i class='icon-ok grid_1 '></i>".html_safe, accomplish_appening_path(appening), method: :post, id: "accomplish_appening" %>
-  <%= link_to "<i class='icon-remove grid_1 omega'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?", id: "delete_appening" %>
 
   <div class="appeningDetails grid_16 alpha omega">
+    <%= link_to "<i class='icon-ok'></i>".html_safe, accomplish_appening_path(appening), method: :post, id: "accomplish_appening" %>
+  <%= link_to "<i class='icon-remove'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?", id: "delete_appening" %>
     <p><%= appening.created_at.strftime("%D") %></p>
     <%= link_to "<i class='icon-pencil'></i>".html_safe, edit_appening_path(appening), remote: true %>
     <%= link_to "<i class='icon-comment-alt'></i>".html_safe, new_appening_comment_path(appening_id: appening.id), remote: true %>
