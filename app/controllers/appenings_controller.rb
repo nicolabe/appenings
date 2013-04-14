@@ -85,9 +85,14 @@ class AppeningsController < ApplicationController
 
   def accomplish
     @appening = Appening.find(params[:id])
-    @appening.accomplished = true
+    @appening.accomplished = !@appening.accomplished
     @appening.save
-    redirect_to appenings_path, notice: "Congratulations, you've accomplished a goal!"
+    if @appening.accomplished
+      flash.notice = "Congratulations, you've accomplished a goal!"
+    else
+      flash.notice = "Undid accomplishment (story and pictures will still be available)."
+    end
+    redirect_to appenings_path
   end
 
   def copy
