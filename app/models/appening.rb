@@ -9,5 +9,6 @@ class Appening
   validates_presence_of :title, :user
 
   belongs_to :user
+  belongs_to :feed
   embeds_many :comments
 end

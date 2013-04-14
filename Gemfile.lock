@@ -99,7 +99,7 @@ GEM
       tzinfo (~> 0.3.22)
     mongoid-paperclip (0.0.8)
       paperclip (>= 2.3.6)
-    moped (1.4.4)
+    moped (1.4.5)
     multi_json (1.7.2)
     nokogiri (1.5.9)
     origin (1.0.11)

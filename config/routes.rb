@@ -33,6 +33,8 @@ Appenings::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"
   end
 
+  match "feed" => "feed#show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
