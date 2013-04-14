@@ -5,7 +5,8 @@
   </div>
 
   <div class="appeningDetails grid_16 alpha omega">
-    <%= link_to "Share your story", story_appening_path(appening), remote: true %>
+    <%= link_to "Undo accomplish", accomplish_appening_path(appening), method: "post" %>
+    <%= link_to "Share your story", story_appening_path(appening), remote: true %></br>
     <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true%>
     <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?"%>
     <p class="story"><%= appening.story %></p>
