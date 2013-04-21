@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: "Bungee jump"
-  user: nico
+  type: 
+  title: MyString
+  content: MyString
 
 two:
-  title: "Sky diving"
-  user: nico
+  type: 
+  title: MyString
+  content: MyString

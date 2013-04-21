@@ -34,6 +34,7 @@ Appenings::Application.routes.draw do
   end
 
   match "feed" => "feed#show"
+  match "remove_feed/:appening_id" => "feed#remove"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

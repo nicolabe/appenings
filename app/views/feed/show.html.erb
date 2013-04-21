@@ -1,11 +1,11 @@
 <h3>Friend feed</h3>
-<% @appenings.each do |appening| %>
-  <div class="grid_16">
-    <%= appening.user.username %> posted <%= appening.title %>
+<% @feed_entries.each do |entry| %>
+  <div class="grid_12">
+    <%= entry.title %><%= entry.content %>
+  </div>
+  <div class="grid_4">
+    <%= link_to "Remove", "#" %> 
   </div>
   <div class="clear"></div>
-  <div id="comment_container_<%= appening.id %>" class="comment_container grid_16"></div>
-  <%= button_to "Comment", new_appening_comment_path(appening_id: appening.id), method: "get", remote: true, class: "grid_2 alpha" %> 
-  <%= button_to "Copy", copy_appening_path(appening, user_id: appening.user.id), class: "grid_2 omega" %>
-  
+  <div id="comment_container_<%= entry.id %>" class="comment_container grid_16"></div>
 <% end %>

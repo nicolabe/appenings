@@ -2,6 +2,6 @@ class Feed
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :user
-  embeds_many :appenings
+  embedded_in :user
+  embeds_many :feed_events
 end

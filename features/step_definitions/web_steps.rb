@@ -16,6 +16,10 @@ Given /^I am logged in as (.+)$/ do |username|
   click_button "Sign in"
 end
 
+Given /^I am signed out$/ do
+  step "I follow logout"
+end
+
 When /^I go to (.+)$/ do |page|
   visit path_to(page)
 end
