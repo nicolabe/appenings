@@ -9,6 +9,11 @@ Given /^I am on (.+)$/ do |page|
 end
 
 Given /^I am logged in as (.+)$/ do |username|
+  begin
+    page.click_link "logout"
+  rescue
+    puts "Already signed out"
+  end
   user = User.find_by(username: username)
   visit '/login'
   fill_in "user_email", :with => user.email

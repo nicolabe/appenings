@@ -11,9 +11,16 @@ Feature: Manage appenings
     And Nico is friends with Ingrid
 
   @javascript
-  Scenario: List feed
+  Scenario: List feed with one appening event
     Given Ingrid has posted a new appening "Bungee jump"
-    And I am signed out
     And I am logged in as Nico
     When I follow Feed
     Then I should see "Bungee jump"
+
+  @javascript @comment
+  Scenario: List feed with one comment event
+    Given Ingrid has posted a new appening "Bungee jump"
+    And Ingrid comments "Cool" on her appening "Bungee jump"
+    And I am logged in as Nico
+    When I follow Feed
+    Then I should see "Cool"
