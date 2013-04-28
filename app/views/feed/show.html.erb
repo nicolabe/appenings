@@ -1,7 +1,7 @@
 <h3>Friend feed</h3>
 <% @feed_entries.each do |entry| %>
   <div class="grid_12">
-    <%= entry.title %><%= entry.content %>
+    <%= entry.user %> posted <%= entry.content %>
   </div>
   <div class="grid_4">
     <%= link_to "Remove", "#" %> 

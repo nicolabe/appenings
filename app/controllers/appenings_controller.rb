@@ -46,9 +46,8 @@ class AppeningsController < ApplicationController
 
     respond_to do |format|
       if @appening.save
-        title = "#{current_user.username} posted: "
         content = @appening.title
-        feed_event = FeedEvent.create(title: title, content: content, type: "appening")
+        feed_event = FeedEvent.create(user: current_user, content: content, type: "appening")
         current_user.friends.each do |friend_id|
           friend = User.find(friend_id)
           friend.feed_events << feed_event.id 

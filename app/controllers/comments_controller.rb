@@ -21,9 +21,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.author = current_user.username
     @appening.comments << @comment
-    title = "#{current_user.username} commented on #{@appening.user.username}'s appening \"#{@appening.title}\": "
     content = @comment.text
-    feed_event = FeedEvent.create(title: title, content: content, type: "comment")
+    feed_event = FeedEvent.create(user: current_user, content: content, type: "comment")
     current_user.friends.each do |friend_id|
       friend = User.find(friend_id)
       friend.feed_events << feed_event.id 
