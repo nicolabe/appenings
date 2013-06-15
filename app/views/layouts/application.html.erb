@@ -16,13 +16,15 @@
           <span class="icon-bar"></span>
         </button>
         <div class="nav-collapse collapse">
-          <%= link_to "Appenings", appenings_path, class: "brand" %>
           <% if current_user.present? %>
+            <%= link_to "Appenings", appenings_path, class: "brand" %>
             <ul class="nav">
               <li><%= link_to "Feed", feed_path %></li>
               <li><%= link_to "<i class='icon-group'></i>".html_safe, friends_path, :class => "friendButton" %></li>
               <li><%= link_to "<i class='icon-signout'></i>".html_safe, logout_path, :id => "logout", :class => "logoutButton" %></li>
             </ul>
+          <% else %>
+            <span class="brand">Appenings</span>
           <% end %>
         </div>
       </div>

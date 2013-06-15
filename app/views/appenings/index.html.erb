@@ -1,25 +1,22 @@
-<div class="grid_16 appeningList">
-  <div class="appeningHeader header grid_16 alpha omega">
-    <h3>Appenings</h3>
-    <%= link_to "new <i class='icon-plus'></i>".html_safe, new_appening_path, :class => "newAppeningButton", remote: true %>
-  </div>
-  
-  <div class="appeningEntries">
-    <div id="newAppening" class="appening"></div>
-    <% @appenings.each do |appening| %>
-      <%= render appening %>
-    <% end %>
-  </div>
-</div>
+<h3>Appenings</h3>
+<%= link_to "new <i class='icon-plus'></i>".html_safe, new_appening_path, :class => "newAppeningButton", remote: true %>
+<div id="newAppening" class="appening"></div>
 
-<div class="grid_16 appeningList">
-  <div class="appeningHeader header grid_16 alpha omega">
-    <h3>Accomplished</h3>
-  </div>
-
-  <div class="appeningEntries">
-    <% @accomplished_appenings.each do |appening| %>
-      <%= render :partial => "accomplished", locals: {appening: appening} %>
-    <% end %>
+<div class="tabbable">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Incomplete</a></li>
+    <li><a href="#tab2" data-toggle="tab">Complete</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <% @appenings.each do |appening| %>
+        <%= render appening %>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <% @accomplished_appenings.each do |appening| %>
+        <%= render :partial => "accomplished", locals: {appening: appening} %>
+      <% end %>
+    </div>
   </div>
 </div>
