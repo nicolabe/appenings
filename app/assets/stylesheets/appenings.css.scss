@@ -2,19 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$background: #fff;
-$headerBackground: #019875;
-$headerBorder: #015844;
-$headerFont: #232621;
-$paragraphFont: #232621;
+$black: #fff;
+$emerald: #019875;
+$darkEmerald: #015844;
+$blackGreen: #232621;
 $blue: #1693CB;
 $red: #CB1630;
 $green: #019875;
+$emeraldAlpha1:rgba(2,228,176,.4);
+$emeraldAlpha2:rgba(2,228,176,.2);
+
+$background: $black;
+$headerBackground: $emerald;
+$headerBorder: $darkEmerald;
+$headerFont: $blackGreen;
+$paragraphFont: $blackGreen;
+$shade1: $emeraldAlpha1;
+$shade2: $emeraldAlpha2;
 
 $headerFont: "Bariol";
 
-$shade1: rgba(2,228,176,.2);
-$shade2: rgba(2,228,176,.4);
 
 @font-face {
 	font: {
@@ -23,244 +30,4 @@ $shade2: rgba(2,228,176,.4);
 		style: 'normal';
 	}
 	src: asset-url('Franchise-Bold-hinted.ttf', font) format('truetype');
-}
-
-.friendButton{
-	color:white;
-	text-decoration: none;
-}
-
-.menu{
-	padding-right: 0.4em;
-	display: inline-block;
-	float:right;
-	color:white;
-}
-
-.menu a{
-	font-size: .9em;
-	text-decoration: none;
-	margin-right: .4em;
-}
-
-body{
-	background-color: $background;
-	color:black;
-	font-family: klavika-web, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
-}
-
-/**
-topbar elements
-*/
-
-.topBarContainer{
-	width: 100%;
-	margin-bottom: 4em;
-}
-
-
-.topBar{
-	position: fixed;
-	top:0;
-	left:0;
-	width: 100%;
-	font-size: 2em;
-	background-color: $headerBackground;
-	height: 40px;
-	z-index: 10;
-}
-
-.container{
-	padding-top: 3em !important;
-}
-
-.logo{
-	font-family: $headerFont, helvetica;
-	font-style: italic;
-	font-weight: bold;
-	color:$headerFont;
-	margin-left: .4em;
-}
-
-.logoutButton{
-	text-decoration: none;
-	color:red;
-}
-
-a.button:link, a.button:visited, a.button:active{
-	border: 1px solid black;
-	padding: 4px;
-	text-decoration: none;
-	color: black;
-}
-
-/* appenings list */
-
-.appeningHeader{
-	position: relative;
-	z-index: 1000;
-	background-color: $headerBackground;
-	color: $headerFont;
-	height: 40px;
-	line-height: 40px;
-	border-top: 0;
-}
-
-.appeningHeader > h3{
-	float:left;
-	margin-bottom: 0;
-	border-style: solid;
-	border-bottom: 2em;
-	border-color: red;
-}
-
-.newAppeningButton{
-	color: $green;
-	float:right;
-	font-size: 1.5em;
-}
-/* individual appening */
-
-.appeningEntries{
-	position: relative;
-	background-color: $background;
-	z-index: 0;
-	margin-bottom: 2px;
-}
-
-.appening{
-	height:3em;
-	margin-top: 2px;
-}
-
-div[id*="appening_"]{
-	height: 40px;
-	margin-right: 0;
-	background-color: $shade1;
-}
-
-div[id*="appening_"] > i{
-	padding-right: .4em;
-	float: right;
-	color: #fff;
-}
-
-.appening i{
-	font-size: 2em;
-	height: 40px;
-	color: #fff;
-	text-align: center;
-}
-
-.appening:nth-child(even) div[id*="appening_"],
-.appening:nth-child(even) > a > i,
-.appening:nth-child(even) .appeningDetails {
-	background-color: $shade2;
-}
-
-.appening h4{
-	margin-left: 1em;
-	margin-bottom: 0;
-	line-height: 40px;
-	float: left;
-}
-
-.appening p{
-	margin: 0;
-	font-size: .8em;
-}
-
-.appening .icon-ok:hover{
-	color: $green;
-}
-
-.appening .icon-remove:hover{
-	color: $red;
-}
-
-.appening .icon-pencil:hover{
-	color: rgba(255,204,29,1);
-}
-
-.appening .icon-comment-alt:hover{
-	color: $blue;
-}
-
-/* add new appening, form */
-
-#newAppening{
-	display:none;
-}
-
-#newAppening input[type="text"]{
-	background-color: transparent;
-	border: 0;
-	outline: 0;
-	font-size: 19px;
-	width: 100%;
-	font-weight: bold;
-	margin-left: .4em;
-	margin-top: .4em;
-}
-
-/* appening details */
-
-.appeningDetails {
-	display: none;
-	margin-bottom: 2px;
-	background-color: $shade1;
-}
-
-.appeningDetails > a {
-	position: relative;
-	left:91.5%;
-	bottom:20px;
-}
-
-.appeningDetails > a > i {
-	height: 40px;
-	width: 40px;
-	margin: 0;
-	background-color: transparent;
-	border: 2px solid $background;
-	border-right:0;
-	margin-left: -4px;
-}
-
-
-
-
-/* end appening listing */
-
-
-.ribbon{
-	background-color: $headerBackground;
-}
-
-
-h3{
-	font-family: helvetica, Arial, sans-serif;
-}
-
-a.button:hover{
-	background-color: #A09675;
-}
-
-#loginBox{
-	border:1px solid #000;
-	margin-top: 15%;
-	text-align: center;
-	background-color: $background;
-	padding-bottom: 20px;
-}
-
-ul{
-	text-align: left;
-	font-style: normal;
-	list-style-type: none;
-}
-
-.story {
-  text-indent: 1ex;
-  padding: 10px;
 }
