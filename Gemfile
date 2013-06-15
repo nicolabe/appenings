@@ -12,6 +12,10 @@ gem 'bson_ext'
 gem 'devise'
 gem 'font-awesome-rails'
 
+gem 'twitter-bootswatch-rails'
+gem 'twitter-bootswatch-rails-fontawesome'
+gem 'twitter-bootswatch-rails-helpers'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
