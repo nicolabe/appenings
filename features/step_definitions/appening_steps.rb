@@ -20,7 +20,6 @@ end
 Given /^(.*?) comments "(.*?)" on her appening "(.*?)"$/ do |user, comment, appening_text|
   step "I am logged in as #{user}"
   appening = Appening.find_by(title: appening_text)
-  find("#appening_#{appening.id}").click
   find(".comment-appening").click
   step "I fill in \"new_comment\" with \"#{comment}\"" 
   step "I submit the form"

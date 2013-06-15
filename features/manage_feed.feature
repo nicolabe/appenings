@@ -20,7 +20,7 @@ Feature: Manage appenings
   @javascript @comment
   Scenario: List feed with one comment event
     Given Ingrid has posted a new appening "Bungee jump"
-    And Ingrid comments "Cool" on her appening "Bungee jump"
+    When Ingrid comments "Cool" on her appening "Bungee jump"
     And I am logged in as Nico
-    When I follow Feed
+    And I follow Feed
     Then I should see "Cool"
