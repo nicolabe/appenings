@@ -1,24 +1,23 @@
-<div class="appening">
-  
-  <div id="appening_<%= appening.id %>" class="grid_16 alpha">
-    <h4><%= appening.title %></h4>
-    <i class='icon-chevron-up'></i>
-  </div>
-
-  <div class="appeningDetails grid_16 alpha omega">
-    <%= link_to "<i class='icon-ok'></i>".html_safe, accomplish_appening_path(appening), method: :post, id: "accomplish_appening" %>
-  <%= link_to "<i class='icon-remove'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?", id: "delete_appening" %>
-    <p><%= appening.created_at.strftime("%D") %></p>
-    <%= link_to "<i class='icon-pencil'></i>".html_safe, edit_appening_path(appening), remote: true %>
-    <%= link_to "<i class='icon-comment-alt'></i>".html_safe, new_appening_comment_path(appening_id: appening.id), class: "comment-appening", remote: true %>
-    <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
-
-    <% appening.comments.each do |comment| %> 
-    <div class="comments">
-      <%= comment.author %> wrote: 
-      <%= comment.text %>
-      <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?" if comment.author == current_user.username %>
+<div class="span6">
+  <div class="well">
+    <div id="appening_<%= appening.id %>">
+      <h4 style="display:inline;"><%= appening.title %></h4>  
+      <i class='icon-chevron-up pull-right'></i>
     </div>
-    <% end %>
+    <div class="appeningDetails">
+      <%= link_to "<i class='icon-ok'></i>".html_safe, accomplish_appening_path(appening), method: :post, id: "accomplish_appening" %>
+      <%= link_to "<i class='icon-remove'></i>".html_safe, appening_path(appening), method: "delete", confirm: "Are you sure?", id: "delete_appening" %>
+      <p><%= appening.created_at.strftime("%D") %></p>
+      <%= link_to "<i class='icon-pencil'></i>".html_safe, edit_appening_path(appening), remote: true %>
+      <%= link_to "<i class='icon-comment-alt'></i>".html_safe, new_appening_comment_path(appening_id: appening.id), class: "comment-appening", remote: true %>
+      <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
+      <% appening.comments.each do |comment| %> 
+        <div class="comments">
+          <%= comment.author %> wrote: 
+          <%= comment.text %>
+          <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?" if comment.author == current_user.username %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

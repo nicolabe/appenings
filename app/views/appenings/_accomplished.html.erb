@@ -1,37 +1,43 @@
-<div class="appening">
-  <div id="appening_<%= appening.id %>" class="grid_16 alpha" >
-    <h4><%= appening.title %></h4>
-    <i class='icon-chevron-up'></i>
-  </div>
-
-  <div class="appeningDetails grid_16 alpha omega">
-    <%= link_to "Undo accomplish", accomplish_appening_path(appening), method: "post" %>
-    <%= link_to "Share your story", story_appening_path(appening), remote: true %></br>
-    <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true%>
-    <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?"%>
-    <p class="story"><%= appening.story %></p>
-
-    <div class="appeningPictures">
-      <% appening.pictures.each do |picture| %>
-      <%= image_tag picture.attachment.url(:medium) %>
-      <%= link_to "Remove", remove_appening_picture_path(picture, appening_id: appening), method: "post" %>
-      <% end %>
+<div class="span6">
+  <div class="well">
+    <div id="appening_<%= appening.id %>">
+      <h4 style="display:inline;"><%= appening.title %></h4>  
+      <i class='icon-chevron-up pull-right'></i>
     </div>
+    <div class="appeningDetails">
+      <div class="row">
+        <%= link_to "Share your story", story_appening_path(appening), remote: true %>
+        <%= link_to "Unaccomplish", accomplish_appening_path(appening), method: "post" %>
+        <%= link_to "Comment", new_appening_comment_path(appening_id: appening.id), remote: true%>
+        <%= link_to "Delete", appening_path(appening), method: "delete", confirm: "Are you sure?"%>
+      </div>
 
-    <div>
-      <b>Upload picture:</b>
-      <%= form_for appening, url: upload_appening_pictures_path(appening_id: appening.id), html: { method: "post"} do |f| %>
-      <%= f.file_field :attachment %>
-      <%= f.submit "Upload" %>
-      <% end %>
+      <p class="story"><%= appening.story %></p>
+
+      <div class="row"> <!-- CAROUSEL ON CLICK? FANCYBOX?? -->
+        <% appening.pictures.each do |picture| %>
+        <%= image_tag picture.attachment.url(:medium) %>
+        <%= link_to "Remove", remove_appening_picture_path(picture, appening_id: appening), method: "post" %>
+        <% end %>
+      </div>
+
+      <div class="row">
+        <b>Upload picture:</b>
+        <%= form_for appening, url: upload_appening_pictures_path(appening_id: appening.id), html: { method: "post"} do |f| %>
+        <%= f.file_field :attachment %>
+        <%= f.submit "Upload" %>
+        <% end %>
+      </div>
+      <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
+      <div class="row">
+        <% appening.comments.each do |comment| %> 
+          <div class="comments">
+            <b><%= comment.author %> wrote: </b>
+            <p><%= comment.text %></p>
+            <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?" if comment.author == current_user.username %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div id="comment_container_<%= appening.id %>" class="comment_container"></div>
-    <% appening.comments.each do |comment| %> 
-    <div class="comments">
-      <b><%= comment.author %> wrote: </b>
-      <p><%= comment.text %></p>
-      <%= link_to "Delete", appening_comment_path(appening, comment), method: "delete", confirm: "Are you sure?" if comment.author == current_user.username %>
-    </div>
-    <% end %>
   </div>
 </div>
