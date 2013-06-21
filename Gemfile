@@ -30,14 +30,11 @@ end
 
 gem 'jquery-rails'
 
-group :test do
+group :test, :development do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   gem 'capybara'
   gem 'rspec-rails'
-end
-
-group :development do
   gem "better_errors"
 end
 
